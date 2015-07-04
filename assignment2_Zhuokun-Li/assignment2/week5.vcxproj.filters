@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="week5\main.cpp" />
+    <ClCompile Include="week5\example4.cpp" />
+    <ClCompile Include="..\wolf\W_Buffer.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_BufferManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_Common.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_IndexBuffer.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_Material.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_MaterialManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_Program.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_ProgramManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_Texture.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_TextureManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_VertexBuffer.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolf\W_VertexDeclaration.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="collidetest.cpp" />
+    <ClCompile Include="Camera.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="CityModeller.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="FormatTranslator.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Tiny\tinystr.cpp">
+      <Filter>Tiny</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Tiny\tinyxml.cpp">
+      <Filter>Tiny</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Tiny\tinyxmlerror.cpp">
+      <Filter>Tiny</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Tiny\tinyxmlparser.cpp">
+      <Filter>Tiny</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionDetector.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBCollider.cpp">
+      <Filter>Class\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereCollider.cpp">
+      <Filter>Class\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Class\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
+      <Filter>Class\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Class\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Class\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Class\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionalLightcpp.cpp">
+      <Filter>Class\Light</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\wolf\W_Buffer.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_BufferManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_Common.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_IndexBuffer.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_Material.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_MaterialManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_Program.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_ProgramManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_Texture.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_TextureManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_Types.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_VertexBuffer.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolf\W_VertexDeclaration.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="week5\examples.h">
+      <Filter>headfile</Filter>
+    </ClInclude>
+    <ClInclude Include="collidetest.h">
+      <Filter>headfile</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="CityModeller.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>headfile</Filter>
+    </ClInclude>
+    <ClInclude Include="FormatTranslator.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tiny\tinystr.h">
+      <Filter>Tiny</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tiny\tinyxml.h">
+      <Filter>Tiny</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>headfile</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetector.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBCollider.h">
+      <Filter>Class\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereCollider.h">
+      <Filter>Class\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Class\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="SurfaceMaterial.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>Class\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Class\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Class\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Class\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>Class\Light</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="wolf">
+      <UniqueIdentifier>{3c684ae4-ebd7-4333-a9db-381b9b70d2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{5eda286f-693b-45c3-b26c-eacda6d42935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headfile">
+      <UniqueIdentifier>{683dcb43-b30f-49db-b0f7-dd64df41b5fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class">
+      <UniqueIdentifier>{9bbb9a46-d9c2-4d84-aa67-05856b1b2025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiny">
+      <UniqueIdentifier>{a937be29-1183-4a85-b457-fbc8153c6002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Collider">
+      <UniqueIdentifier>{f2665f46-e01a-4404-8456-53664a14071b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Geometry">
+      <UniqueIdentifier>{d0e29aa5-15ab-4029-9cb4-657fdd97c951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Light">
+      <UniqueIdentifier>{ed8599ae-71f5-4fd0-b3f6-ed9822a27ea5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\data\assignment2\cube.vsh">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\assignment2\cube.fsh">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\assignment2\city_model.fsh">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\assignment2\city_model.vsh">
+      <Filter>data</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\data\assignment2\grass.tga">
+      <Filter>data</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

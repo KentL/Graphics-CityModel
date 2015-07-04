@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>31BD8352-FC15-4BD2-93E7-DC4D7395EF56</string>
+	<key>IDESourceControlProjectName</key>
+	<string>week5</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>24B5AC14BE5B729DC53C9CA08A7706A212C7426D</key>
+		<string>https://bitbucket.org/tinto/graphics-1-code.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>week5/week5.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>24B5AC14BE5B729DC53C9CA08A7706A212C7426D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/tinto/graphics-1-code.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>24B5AC14BE5B729DC53C9CA08A7706A212C7426D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>24B5AC14BE5B729DC53C9CA08A7706A212C7426D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>graphics-1-code</string>
+		</dict>
+	</array>
+</dict>
+</plist>

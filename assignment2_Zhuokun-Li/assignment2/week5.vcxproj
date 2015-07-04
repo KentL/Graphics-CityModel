@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{85D2A377-99E1-4513-BBAD-362AB7A16A98}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>week5</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\glfw\include;$(SolutionDir)..\wolf;$(SolutionDir)..\glew\include;$(SolutionDir)..;$(SolutionDir)..\assignment2;$(SolutionDir)..\Tiny;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>GLFW.lib;glew32.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\glfw\lib-msvc100;$(SolutionDir)..\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Tiny\tinystr.cpp" />
+    <ClCompile Include="..\Tiny\tinyxml.cpp" />
+    <ClCompile Include="..\Tiny\tinyxmlerror.cpp" />
+    <ClCompile Include="..\Tiny\tinyxmlparser.cpp" />
+    <ClCompile Include="..\wolf\W_Buffer.cpp" />
+    <ClCompile Include="..\wolf\W_BufferManager.cpp" />
+    <ClCompile Include="..\wolf\W_Common.cpp" />
+    <ClCompile Include="..\wolf\W_IndexBuffer.cpp" />
+    <ClCompile Include="..\wolf\W_Material.cpp" />
+    <ClCompile Include="..\wolf\W_MaterialManager.cpp" />
+    <ClCompile Include="..\wolf\W_Program.cpp" />
+    <ClCompile Include="..\wolf\W_ProgramManager.cpp" />
+    <ClCompile Include="..\wolf\W_Texture.cpp" />
+    <ClCompile Include="..\wolf\W_TextureManager.cpp" />
+    <ClCompile Include="..\wolf\W_VertexBuffer.cpp" />
+    <ClCompile Include="..\wolf\W_VertexDeclaration.cpp" />
+    <ClCompile Include="AABBCollider.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CityModeller.cpp" />
+    <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="collidetest.cpp" />
+    <ClCompile Include="CollisionDetector.cpp" />
+    <ClCompile Include="DirectionalLightcpp.cpp" />
+    <ClCompile Include="FormatTranslator.cpp" />
+    <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="SphereCollider.cpp" />
+    <ClCompile Include="week5\example4.cpp" />
+    <ClCompile Include="week5\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Tiny\tinystr.h" />
+    <ClInclude Include="..\Tiny\tinyxml.h" />
+    <ClInclude Include="..\wolf\W_Buffer.h" />
+    <ClInclude Include="..\wolf\W_BufferManager.h" />
+    <ClInclude Include="..\wolf\W_Common.h" />
+    <ClInclude Include="..\wolf\W_IndexBuffer.h" />
+    <ClInclude Include="..\wolf\W_Material.h" />
+    <ClInclude Include="..\wolf\W_MaterialManager.h" />
+    <ClInclude Include="..\wolf\W_Program.h" />
+    <ClInclude Include="..\wolf\W_ProgramManager.h" />
+    <ClInclude Include="..\wolf\W_Texture.h" />
+    <ClInclude Include="..\wolf\W_TextureManager.h" />
+    <ClInclude Include="..\wolf\W_Types.h" />
+    <ClInclude Include="..\wolf\W_VertexBuffer.h" />
+    <ClInclude Include="..\wolf\W_VertexDeclaration.h" />
+    <ClInclude Include="AABBCollider.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CityModeller.h" />
+    <ClInclude Include="Collider.h" />
+    <ClInclude Include="collidetest.h" />
+    <ClInclude Include="CollisionDetector.h" />
+    <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="FormatTranslator.h" />
+    <ClInclude Include="Frustum.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="Sphere.h" />
+    <ClInclude Include="SphereCollider.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="struct.h" />
+    <ClInclude Include="SurfaceMaterial.h" />
+    <ClInclude Include="week5\examples.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\data\assignment2\cube.fsh" />
+    <None Include="..\data\assignment2\cube.vsh" />
+    <None Include="..\data\assignment2\city_model.fsh" />
+    <None Include="..\data\assignment2\city_model.vsh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\data\assignment2\grass.tga" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

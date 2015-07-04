@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no" ?>
+<!-- effect data -->
+<texture name="city_model_texture" tex_category="6" multiple="true">
+	
+	<category name="windows" amount="6">
+		<element name="w1" topleft="0,0" topright="0.25,0.0" bottomleft="0,0.4" bottomright="0.25,0.4"/>
+		<element name="w2" topleft="0.25,0" topright="0.5,0.0" bottomleft="0.25,0.4" bottomright="0.5,0.4"/>
+		<element name="w3" topleft="0.5,0" topright="0.75,0.0" bottomleft="0.5,0.4" bottomright="0.75,0.4"/>
+		<element name="w4" topleft="0.75,0" topright="1,0.0" bottomleft="0.75,0.4" bottomright="1.0,0.4"/>
+		<element name="w5" topleft="0,0.8" topright="0.25,0.4" bottomleft="0,0.8" bottomright="0.25,0.8"/>
+		<element name="w6" topleft="0.25,0.4" topright="0.5,0.4" bottomleft="0.25,0.8" bottomright="0.5,0.8"/>
+	</category>
+
+	<category name="roof_top" amount="4">
+		<element name="t1" topleft="0,0.8" topright="0.125,0.8" bottomleft="0,1" bottom="0.125,1"/>
+		<element name="t2" topleft="0.125,0.8" topright="0.25,0.8" bottomleft="0.125,1" bottom="0.25,1"/>
+		<element name="t3" topleft="0.25,0.8" topright="0.375,0.8" bottomleft="0.25,1" bottom="0.375,1"/>
+		<element name="t4" topleft="0.375,0.8" topright="0.5,0.8" bottomleft="0.375,1" bottom="0.5,1"/>
+	</category>
+
+	<category name="road" amount="1">
+		<element name="r1" topleft="0.5,0.4" topright="0.75,0.4" bottomleft="0.5,0.8" bottomright="0.75,0.8"/>
+	</category>
+
+	<category name="grass" amount="1">
+		<element name="g1" topleft="0.5,0.8" topright="0.625,0.8" bottomleft="0.5,1" bottomright="0.625,1"/>
+	</category>
+	
+	<category name="space" amount="1">
+		<element name="sp1" topleft="0.625,0.8" topright="0.75,0.8" bottomleft="0.625,1" bottomright="0.75,1"/>
+	</category>
+
+	<category name="cross" amount="1">
+		<element name="c1" topleft="0.75,0.8" topright="0.875,0.8" bottomleft="0.75,1" bottomright="0.875,1"/>
+	</category>
+
+</texture>
