@@ -1,0 +1,30 @@
+﻿Build started 7/3/2015 4:23:49 PM.
+     1>Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\visual studio 2013\VC\bin\CL.exe /c /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\.." /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CollisionDetector.cpp Plane.cpp Ray.cpp
+         Plane.cpp
+         CollisionDetector.cpp
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\aabbcollider.h(22): warning C4172: returning address of local variable or temporary
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'vec3' : unknown override specifier
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'GetOrigin' : unknown override specifier
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2270: 'SetOrigin' : modifiers not allowed on nonmember functions
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2091: function returns function
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2440: 'return' : cannot convert from 'glm::vec3' to 'glm::vec3 (__cdecl *)(void)'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         Generating Code...
+         Compiling...
+         Ray.cpp
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'vec3' : unknown override specifier
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'GetOrigin' : unknown override specifier
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2270: 'SetOrigin' : modifiers not allowed on nonmember functions
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2091: function returns function
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2440: 'return' : cannot convert from 'glm::vec3' to 'glm::vec3 (__cdecl *)(void)'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         Generating Code...
+     1>Done Building Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.10

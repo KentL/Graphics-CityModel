@@ -1,0 +1,46 @@
+﻿Build started 11/26/2014 7:05:53 PM.
+     1>Project "C:\Users\Cheuckkwan\Desktop\graphics-1-code - Copy\graphics-1-code\assignment2\week5.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\week5.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib ..\wolf\W_Buffer.cpp ..\wolf\W_BufferManager.cpp ..\wolf\W_Common.cpp ..\wolf\W_IndexBuffer.cpp ..\wolf\W_Material.cpp ..\wolf\W_MaterialManager.cpp ..\wolf\W_Program.cpp ..\wolf\W_ProgramManager.cpp ..\wolf\W_Texture.cpp ..\wolf\W_TextureManager.cpp ..\wolf\W_VertexBuffer.cpp ..\wolf\W_VertexDeclaration.cpp collidetest.cpp controlmodule.cpp creatcitydata.cpp loadtobuffer.cpp week5\example4.cpp week5\main.cpp
+         W_Buffer.cpp
+     1>..\wolf\W_Buffer.cpp(12): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_BufferManager.cpp
+     1>..\wolf\W_BufferManager.cpp(49): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_Common.cpp
+     1>..\wolf\W_Common.cpp(479): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_IndexBuffer.cpp
+     1>..\wolf\W_IndexBuffer.cpp(46): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_Material.cpp
+     1>..\wolf\W_Material.cpp(304): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_MaterialManager.cpp
+     1>..\wolf\W_MaterialManager.cpp(63): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_Program.cpp
+     1>..\wolf\W_Program.cpp(284): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_ProgramManager.cpp
+     1>..\wolf\W_ProgramManager.cpp(64): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_Texture.cpp
+     1>..\wolf\W_Texture.cpp(201): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_TextureManager.cpp
+     1>..\wolf\W_TextureManager.cpp(73): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_VertexBuffer.cpp
+     1>..\wolf\W_VertexBuffer.cpp(54): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         W_VertexDeclaration.cpp
+     1>..\wolf\W_VertexDeclaration.cpp(176): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         collidetest.cpp
+     1>collidetest.cpp(188): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         controlmodule.cpp
+     1>controlmodule.cpp(195): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         creatcitydata.cpp
+     1>creatcitydata.cpp(234): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         loadtobuffer.cpp
+     1>loadtobuffer.cpp(223): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         example4.cpp
+     1>week5\example4.cpp(170): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         main.cpp
+     1>week5\main.cpp(143): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         Generating Code...
+     1>Done Building Project "C:\Users\Cheuckkwan\Desktop\graphics-1-code - Copy\graphics-1-code\assignment2\week5.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.38
