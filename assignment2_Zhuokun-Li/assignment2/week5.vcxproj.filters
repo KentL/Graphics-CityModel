@@ -64,9 +64,6 @@
     <ClCompile Include="..\Tiny\tinyxmlparser.cpp">
       <Filter>Tiny</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionDetector.cpp">
-      <Filter>Class</Filter>
-    </ClCompile>
     <ClCompile Include="AABBCollider.cpp">
       <Filter>Class\Collider</Filter>
     </ClCompile>
@@ -90,6 +87,9 @@
     </ClCompile>
     <ClCompile Include="DirectionalLightcpp.cpp">
       <Filter>Class\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionDetector.cpp">
+      <Filter>Class</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -165,9 +165,6 @@
     <ClInclude Include="stdafx.h">
       <Filter>headfile</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionDetector.h">
-      <Filter>Class</Filter>
-    </ClInclude>
     <ClInclude Include="AABBCollider.h">
       <Filter>Class\Collider</Filter>
     </ClInclude>
@@ -194,6 +191,9 @@
     </ClInclude>
     <ClInclude Include="DirectionalLight.h">
       <Filter>Class\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetector.h">
+      <Filter>Class</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,16 @@
 
 #include "Sphere.h"
 
-
-Sphere::Sphere()
+namespace Geometry
 {
-	
-}
+	Sphere::Sphere()
+	{
+
+	}
 
 
-Sphere::~Sphere()
-{
+	Sphere::~Sphere()
+	{
+	}
+
 }

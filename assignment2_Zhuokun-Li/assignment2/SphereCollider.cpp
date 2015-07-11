@@ -1,12 +1,13 @@
 #include "SphereCollider.h"
 
-
-SphereCollider::SphereCollider()
+namespace Colliders
 {
-	this->collider_type = Sphere;
-}
+	SphereCollider::SphereCollider()
+	{
+	}
 
 
-SphereCollider::~SphereCollider()
-{
+	SphereCollider::~SphereCollider()
+	{
+	}
 }

@@ -3,15 +3,16 @@
 #include <algorithm>
 #include <stdlib.h> 
 #include <stdafx.h>
+#include "AABBCollider.h"
 
 #define BEGININGGRID	 0
 #define ROADLENGTH		 100
-#define UNITLENGHT 70
+#define UNITLENGHT 50
 #define ZERO     0
 #define ONETIME  0.33333333
 #define TWICE    0.66666666
 #define TRIPLE   1
-#define SPACE    25
+#define SPACE    5
 #define ROADHEIGHT 0
 #define TEXGRIDSPERROW 8
 #define TEXGRIDSPERCOLUMN 5
@@ -32,6 +33,7 @@ CityModeller::CityModeller()
 	cross = new vector<singlegrid*>();
 	buildingBase = new vector<singlegrid*>();
 	space = new vector<singlegrid*>();
+	aabbCollidersCollection = new vector<Colliders::AABBCollider*>();
 	srand((unsigned)time(NULL));
 }
 
@@ -162,7 +164,7 @@ void CityModeller::generateCityLayoutData(bool firsttime)
 					Diagram of city grid model:
 				  £¨0£¬0£©->->->x++		  |<--width-->|_____
 					 ¡ý   [][][][][][][][][][][][][][][]¡ü
-					 ¡ý   [][][][][][][][][][][][][][][]height
+					 ¡ý   [][][][][][][][][][][][][][][]length
 					 ¡ý   [][][][][][][][][][][][][][][]¡ý
 					y++	 [][][][][][][][][][][][][][][]-----
 
@@ -280,15 +282,8 @@ void CityModeller::generateCityLayoutData(bool firsttime)
 
 void CityModeller::loadBuffer()
 {
-		//*****************Debug Part*************************//
-		if (buildingStore->size() >2500)
-		{
-			//int a = city_vertices_data->size();
-			string s;
-			std::cin >> s;
-		}
-		//****************Debug Part**********************//
-
+		
+#pragma region "Load Buffer Data For Buildings"
 		//building vertex and road vertex,using interleaved buffer
 		for (int i = 0; i < buildingStore->size(); i++)
 		{
@@ -299,40 +294,22 @@ void CityModeller::loadBuffer()
 			//choose roottop texture
 			int rooftopcoordinatex = rand() % 4;
 			int rooftopcoordinatey = 0;
+
 			//*************************************************************************************************************************************************
 			//data for top
 			//*************************************************************************************************************************************************
-			
-
-			//*****************Debug Part*************************//
-			if (buildingStore->size() >2500)
-			{
-				//int a = city_vertices_data->size();
-				string s;
-				std::cin >> s;
-			}
-			//****************Debug Part****************//
-
-
 			//vertex0
-			
  			city_vertices_data->push_back({ buildingStore->at(i)->gridCoordinate.y*UNITLENGHT + SPACE, buildingStore->at(i)->height*UNITLENGHT, buildingStore->at(i)->gridCoordinate.x*UNITLENGHT + SPACE, 1.0 / TEXGRIDSPERROW*rooftopcoordinatex, 1.0 / TEXGRIDSPERCOLUMN, 0, 1, 0 });
-			
 			//vertex1
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x + (buildingStore->at(i)->length*UNITLENGHT) - 2 * SPACE, city_vertices_data->at(5 * 6 * i).y, city_vertices_data->at(5 * 6 * i).z, 1.0 / TEXGRIDSPERROW*(rooftopcoordinatex + 1), 1.0 / TEXGRIDSPERCOLUMN, 0, 1, 0 });
-
 			//vertex2
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i+1).x, city_vertices_data->at(5 * 6 * i + 1).y, city_vertices_data->at(5 * 6 * i + 1).z + (buildingStore->at(i)->width*UNITLENGHT) - 2 * SPACE, 1.0 / TEXGRIDSPERROW*(rooftopcoordinatex + 1), 0, 0, 1, 0 });
-
 			//vertex0
 			city_vertices_data->push_back ({ (buildingStore->at(i)->gridCoordinate.y*UNITLENGHT) + SPACE, buildingStore->at(i)->height*UNITLENGHT, (buildingStore->at(i)->gridCoordinate.x*UNITLENGHT) + SPACE, 1.0 / TEXGRIDSPERROW*rooftopcoordinatex, 1.0 / TEXGRIDSPERCOLUMN, 0, 1, 0 });
-
 			//vertex2
 			city_vertices_data->push_back ({ city_vertices_data->at(5 * 6 * i + 1).x, city_vertices_data->at(5 * 6 * i + 1).y, city_vertices_data->at(5 * 6 * i + 1).z + (buildingStore->at(i)->width*UNITLENGHT) - 2 * SPACE, 1.0 / TEXGRIDSPERROW*(rooftopcoordinatex + 1), 0, 0, 1, 0 });
-
 			//vertex3
 			city_vertices_data->push_back ({ city_vertices_data->at(5 * 6 * i).x, city_vertices_data->at(5 * 6 * i).y, city_vertices_data->at(5 * 6 * i + 2).z, 1.0 / TEXGRIDSPERROW*rooftopcoordinatex, 0, 0, 1, 0 });
-
 
 			//*************************************************************************************************************************************************
 			//   data for front
@@ -354,44 +331,32 @@ void CityModeller::loadBuffer()
 			//*************************************************************************************************************************************************
 			//data for left side
 			//*************************************************************************************************************************************************
-
 			//vertex0
 			city_vertices_data->push_back({ buildingStore->at(i)->gridCoordinate.y*UNITLENGHT + SPACE, buildingStore->at(i)->height*UNITLENGHT, buildingStore->at(i)->gridCoordinate.x*UNITLENGHT + SPACE, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, -1, 0, 0 });
-
 			//vertex3
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x, city_vertices_data->at(5 * 6 * i).y, city_vertices_data->at(5 * 6 * i + 2).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, -1, 0, 0 });
-
 			//vertex5
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x, 0, city_vertices_data->at(5 * 6 * i).z, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, -1, 0, 0 });
-
 			//vertex3
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x, city_vertices_data->at(5 * 6 * i).y, city_vertices_data->at(5 * 6 * i + 2).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, -1, 0, 0 });
-
 			//vertex5		
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x, 0, city_vertices_data->at(5 * 6 * i).z, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, -1, 0, 0 });
-
 			//vertex8
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x, 0, city_vertices_data->at(5 * 6 * i + 10).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, -1, 0, 0 });
 
 			//*************************************************************************************************************************************************
 			//data for right side
 			//*************************************************************************************************************************************************
-
 			//vertex1
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x + buildingStore->at(i)->length*UNITLENGHT - 2 * SPACE, city_vertices_data->at(5 * 6 * i).y, city_vertices_data->at(5 * 6 * i).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, 1, 0, 0 });
-
 			//vertex2
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i + 1).x, city_vertices_data->at(5 * 6 * i + 1).y, city_vertices_data->at(5 * 6 * i + 1).z + (buildingStore->at(i)->width*UNITLENGHT) - 2 * SPACE, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, 1, 0, 0 });
-
 			//vertex6
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i + 1).x, 0, city_vertices_data->at(5 * 6 * i + 1).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, 1, 0, 0 });
-
 			//vertex2
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i + 1).x, city_vertices_data->at(5 * 6 * i + 1).y, city_vertices_data->at(5 * 6 * i + 1).z + (buildingStore->at(i)->width*UNITLENGHT) - 2 * SPACE, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, 1, 0, 0 });
-
 			//vertex6
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i + 1).x, 0, city_vertices_data->at(5 * 6 * i + 1).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, 1, 0, 0 });
-
 			//vertex7
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i + 1).x, 0, city_vertices_data->at(5 * 6 * i + 2).z, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, 1, 0, 0 });
 
@@ -401,24 +366,21 @@ void CityModeller::loadBuffer()
 			//*************************************************************************************************************************************************
 			//vertex0
 			city_vertices_data->push_back({ buildingStore->at(i)->gridCoordinate.y*UNITLENGHT + SPACE, buildingStore->at(i)->height*UNITLENGHT, buildingStore->at(i)->gridCoordinate.x*UNITLENGHT + SPACE, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, 0, 0, -1 });
-
 			//vertex1
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x + buildingStore->at(i)->length*UNITLENGHT - 2 * SPACE, city_vertices_data->at(5 * 6 * i).y, city_vertices_data->at(5 * 6 * i).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, 0, 0, -1 });
-
 			//vertex6
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i + 1).x, 0, city_vertices_data->at(5 * 6 * i + 1).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, 0, 0, -1 });
-
 			//vertex0
 			city_vertices_data->push_back({ buildingStore->at(i)->gridCoordinate.y*UNITLENGHT + SPACE, buildingStore->at(i)->height*UNITLENGHT, buildingStore->at(i)->gridCoordinate.x*UNITLENGHT + SPACE, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*windowcoordinatey * 2, 0, 0, -1 });
-
 			//vertex6
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i + 1).x, 0, city_vertices_data->at(5 * 6 * i + 1).z, 1.0 / TEXGRIDSPERROW * 2 * (windowcoordinatex + 1), 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, 0, 0, -1 });
-
 			//vertex5
 			city_vertices_data->push_back({ city_vertices_data->at(5 * 6 * i).x, 0, city_vertices_data->at(5 * 6 * i).z, 1.0 / TEXGRIDSPERROW * 2 * windowcoordinatex, 1 - 1.0 / TEXGRIDSPERCOLUMN*(windowcoordinatey + 1) * 2, 0, 0, -1 });
-
 		}
 
+#pragma endregion
+
+#pragma region "Load Vertex Data for Roads"
 		//push road vertexs into vector
 		//the 1st for loop load the road that is on row,the 2nd for loop load the road on column,because the texture coordinate for them 
 		//is different(90 degree rotated) so we need to use two for loops
@@ -454,7 +416,9 @@ void CityModeller::loadBuffer()
 			city_vertices_data->push_back({ roadStore->at(j + roadStore->size() / 2)->beginGridColumn*UNITLENGHT, ROADHEIGHT, (roadStore->at(j + roadStore->size() / 2)->endGridRow + 1)*UNITLENGHT, 1.0 / TEXGRIDSPERROW * 4, 1.0 / TEXGRIDSPERROW * 4, 0, 1, 0 });
 		}
 
+#pragma endregion
 
+#pragma region "Load Vertex Data For Space Area, Zebra Crossing and Grass"
 		// space area
 		for (int j = 0; j < space->size(); j++)
 		{
@@ -496,8 +460,29 @@ void CityModeller::loadBuffer()
 			city_vertices_data->push_back(plane[j]);
 		}
 
-		printf("city_vertices_data: %d\n", city_vertices_data->size());
+#pragma endregion
 
+#pragma region "Create Collider for buildings and ground(AABB Colliders)"
+
+		//buildings' colliders
+		for (int i = 0; i < buildingStore->size(); i++)
+		{
+			building* temp_building = buildingStore->at(i);
+			vec3 pos;
+			pos.x = (temp_building->gridCoordinate.y + temp_building->length / 2.0)*UNITLENGHT;
+			pos.y = (temp_building->height/2.0)*UNITLENGHT;
+			pos.z = (temp_building->gridCoordinate.x + temp_building->width / 2.0)*UNITLENGHT;
+			//The width and length in grid model is different from the one in AABBCollider Model;
+			double width = temp_building->width*UNITLENGHT - 2 * SPACE;
+			double length = temp_building->length*UNITLENGHT - 2 * SPACE;
+			double height = temp_building->height*UNITLENGHT;
+			aabbCollidersCollection->push_back(new Colliders::AABBCollider(pos, width, length, height));
+		}
+		//ground's collider
+		aabbCollidersCollection->push_back(new Colliders::AABBCollider(vec3(0,0,0),5000,5000,10));
+
+#pragma endregion
+		printf("city_vertices_data: %d\n", city_vertices_data->size());
 		printf("buildingstore: %d\n", buildingStore->size());
 }
 
@@ -560,12 +545,27 @@ void CityModeller::clearBuffer()
 	}
 	buildingBase->clear();
 
-	city_vertices_data->clear();
+	vector<Colliders::AABBCollider*>::iterator aabbColliderIt = aabbCollidersCollection->begin();
+	for (; aabbColliderIt != aabbCollidersCollection->end(); ++aabbColliderIt)
+	{
+		if (*aabbColliderIt != NULL)
+		{
+			delete *aabbColliderIt;
+			*aabbColliderIt = NULL;
+		}
+	}
+	aabbCollidersCollection->clear();
 
+	city_vertices_data->clear();
 }
 
 std::vector<Vertex2>* CityModeller::getBuffer()
 {
 	return city_vertices_data;
+}
+
+std::vector<Colliders::AABBCollider*>* CityModeller::GetAABBColliders()
+{
+	return aabbCollidersCollection;
 }
 

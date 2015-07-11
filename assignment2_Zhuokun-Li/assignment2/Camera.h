@@ -5,10 +5,12 @@
 #include "Node.h"
 #include "Frustum.h"
 #include <wolf\W_VertexDeclaration.h>
+#include "AABBCollider.h"
 
 
 using namespace std;
 using namespace glm;
+using namespace Geometry;
 
 class Camera:public Node
 {
@@ -22,6 +24,7 @@ private:
 	vec4* vertices;
 	vec4 lookatPoint;
 	bool frustumCalculated;
+	vector<Colliders::AABBCollider*>* aabbColliders;
 
 	//camera movement parameters
 
@@ -39,15 +42,19 @@ public:
 	void setFar(float far);
 	void setNear(float near);
 	void setAspect(float aspect);
+	void SetAABBColliders(vector<Colliders::AABBCollider*>* aabbColliders);
+
 	float getFar();
 	float getNear();
 	float getFOV();
 	mat4 getViewMatrix();
 	mat4 getProjectionMatrix();
 	FrustumNode getFrustum();
-	void cameraMove();
 	void calculateFrustum();
 	vec4 getViewDirection();
+
+	void cameraMove();
+
 };
 
 #endif

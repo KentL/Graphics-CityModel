@@ -1,12 +1,14 @@
 #include "stdafx.h"
 #include "Ray.h"
 
-
-Ray::Ray()
+namespace Geometry
 {
-}
+	Ray::Ray()
+	{
+	}
 
 
-Ray::~Ray()
-{
+	Ray::~Ray()
+	{
+	}
 }

@@ -1,27 +1,86 @@
 #pragma once
 #include "Collider.h"
-class AABBCollider :public Collider
+#include "Plane.h"
+
+using namespace Geometry;
+
+namespace Colliders
 {
-protected:
-	double length;
-	double width;
-	double height;
-public:
-	AABBCollider();
-	AABBCollider(vec3 pos){ position = pos; }	
-	AABBCollider(double width, double length, double height){ this->length = length; this->width = width; this->height = height; }
-	AABBCollider(vec3 pos, double width, double length, double height){ position = pos; this->width = width; this->length = length; this->height = height; }
-	~AABBCollider();
+	class AABBCollider :public Collider
+	{
 
-	void setLength(double length){ this->length = length; }
-	void setWidth(double width){ this->width = width; }
-	void setHeight(double height){ this->height = height; }
-	///<summary>
-	///return width and height of AABBCollider in the form of size[]={width,length}.
-	///</summary>
-	double* getSize() const { double size[] = { width, length }; return size; }
-	double  getWidth() const { return width; }
-	double  getLength() const { return length; }
-	double  getHeight() const { return height; }
-};
+		/*
+		AABB MODEL:		  				 ¡üy+
+		___________ _____				 |
+		|\         \   ¡ü                 |
+		| \         \ Width      ¨Iz+    |
+		|  \_________\_¡ý___        ¨I    |
+		|  | <length>|----           ¨I  |
+		|  |         |hei-             ¨I|---------------->x+
+		 \ |         |ght
+		  \|_________|----
+		*/
 
+	protected:
+		//size data
+		double length;
+		double width;
+		double height;
+
+		//Planes
+		Plane* front;//Front Plane, Whose normal is (0,0,-1)
+		Plane* back;//Back Plane, Whose normal is (0,0,1)
+		Plane* left;//Left Plane, Whose normal is (-1,0,0)
+		Plane* right;//Right Plane, Whose normal is (1,0,0)
+		Plane* top;//Top Plane, Whose normal is (0,1,0)
+		Plane* bottom;//Bottom Plane, Whose normal is (0,-1,0)
+
+		//Flags
+		bool dirty=true;
+		ColliderType collider_type = AABB;
+
+	public:
+		AABBCollider();
+		AABBCollider(vec3 pos);
+		///<summary>
+		///Create an AABBCollider object initialized with width(along x axis),length(along z axis),height(along y axis)
+		///</summary>
+		AABBCollider(double width, double length, double height);
+		///<summary>
+		///Create an AABBCollider object initialized with position,width(along z axis),length(along x axis),height(along y axis)
+		///</summary>
+		AABBCollider(vec3 pos, double width, double length, double height);
+		~AABBCollider();
+
+		//Setters
+		void SetLength(double length);
+		void SetWidth(double width);
+		void SetHeight(double height);
+		
+		//Getters
+		double* GetSize() const;
+		double  GetWidth()  const;
+		double  GetLength() const;
+		double  GetHeight() const;
+		///<summary>
+		///This function return an array of the pointers to the Plane objects in the AABB object.
+		///Return: {front,back,left,right,top,bottom}
+		///</summary>
+		Plane** GetPlanes() ;
+
+		Plane* GetFrontPlane();
+		Plane* GetBackPlane();
+		Plane* GetLeftPlane();
+		Plane* GetRightPlane();
+		Plane* GetTopPlane();
+		Plane* GetBottomPlane();
+
+		ColliderType ColliderType();
+	private:
+		void CalculatePlanes();
+		void CalculateMinMaxCoordinate()
+		{
+			
+		}
+	};
+}

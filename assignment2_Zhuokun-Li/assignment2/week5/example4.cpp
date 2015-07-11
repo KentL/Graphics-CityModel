@@ -5,6 +5,7 @@
 //========================================================================
 #define GLFW_INCLUDE_GL3
 #define GLFW_NO_GLU
+#define TIME_ELAPSE_SPEED 3
 #include <stdio.h>
 #include <stdlib.h>
 #ifndef __APPLE__
@@ -57,7 +58,7 @@ void InitExample4(bool first_time)
 		mainCamera->setPos(vec3(0, 0, -15));
 		mainCamera->setFOV(45);
 		mainCamera->setNear(0.1f);
-		mainCamera->setFar(30000.0f);
+		mainCamera->setFar(3000.0f);
 		mainCamera->setAspect(1280.0f / 720.0f);
 
 		cityModeller = new CityModeller();
@@ -84,6 +85,9 @@ void InitExample4(bool first_time)
 	}
 
 	cityModeller->generateCityLayoutData(first_time);
+	mainCamera->SetAABBColliders(cityModeller->GetAABBColliders());
+
+
 
 	g_pVB1 = wolf::BufferManager::CreateVertexBuffer(&cityModeller->getBuffer()->at(0), sizeof(Vertex2) *(cityModeller->getBuffer()->size()));
 	g_pDecl = new wolf::VertexDeclaration();
@@ -118,7 +122,7 @@ void RenderExample4()
 		}
 	}
 	
-	//press 'r' to change the layout
+	//press 'R' to change the layout
 	if (glfwGetKey(82) == GLFW_PRESS&&!keypressed)
 	{
 		InitExample4(false);
@@ -131,7 +135,7 @@ void RenderExample4()
 
 	mainCamera->cameraMove();
 
-	angle += 0.01;
+	angle += (double)TIME_ELAPSE_SPEED/1000.0;
 	
 	g_light->rotate(angle);
 	

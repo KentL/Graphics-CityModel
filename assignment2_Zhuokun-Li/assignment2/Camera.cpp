@@ -2,8 +2,12 @@
 #include "W_Common.h"
 #include "Camera.h"
 #include <Windows.h>
+#include "AABBCollider.h"
+#include "SphereCollider.h"
+#include "CollisionDetector.h"
 
-#define SPEED 10
+#define SPEED 2
+#define COLLIDER_RADIUS 1
 
 Camera::Camera() 
 {
@@ -206,10 +210,55 @@ void Camera::cameraMove()
 		float yincreasment = forwDistance*sin(turnUpScale / 180 * PI);
 		float zincreasment = forwDistance*cos(turnUpScale / 180 * PI)*cos(turnLeftScale / 180 * PI) - leftDistance*sin(turnLeftScale / 180 * PI);
 
-		this->setPos(this->getPos()+(vec3(xincreasment, yincreasment, zincreasment)));
+#pragma region "Collison Detection Part"
+		vec3 direction = vec3(xincreasment, yincreasment, zincreasment);
+		direction=glm::normalize(direction);
+		vec3 pos_after_changed = this->getPos() + vec3(xincreasment, yincreasment, zincreasment);
+		//detect if collision happened
+
+		Colliders::SphereCollider camera_collider = Colliders::SphereCollider(pos_after_changed,COLLIDER_RADIUS);
+		Geometry::Ray camera_move_ray = Ray(this->getPos(), direction);
+		vector<Plane*> collided_plane = vector<Plane*>();
+		vector<AABBCollider*>collided_aabb = vector<AABBCollider*>();
+		for (int i = 0; i < aabbColliders->size(); i++)
+		{
+			if (CollisionDetector::Does_AABB_Sphere_Collide(aabbColliders->at(i),&camera_collider)==true)
+			{
+				Plane* temp=CollisionDetector::GetAABBRayFirstCollidePlane(aabbColliders->at(i), &camera_move_ray);
+				if (temp!=NULL)
+				{
+					collided_plane.push_back(temp);
+					collided_aabb.push_back(aabbColliders->at(i));
+				}
+			}
+		}
+
+		for (int i = 0; i < collided_plane.size(); i++)
+		{
+			vec3 normal = collided_plane.at(i)->GetNormal();
+			if (glm::abs(normal.x)==1)
+			{
+				xincreasment = 0;
+			}
+			if (glm::abs(normal.y)==1)
+			{
+				yincreasment = 0;
+			}
+			if (glm::abs(normal.z) == 1)
+			{
+				zincreasment = 0;
+			}
+		}
+
+		pos_after_changed = this->getPos()+vec3(xincreasment, yincreasment, zincreasment);
+#pragma endregion
+		//set position
+		this->setPos(pos_after_changed);
 		forwDistance = leftDistance = 0;
 		lastx = newx;
 		lasty = newy;
+		collided_aabb.clear();
+		collided_plane.clear();
 }
 
 void Camera::calculateFrustum()
@@ -229,4 +278,10 @@ void Camera::calculateFrustum()
 	frustum->setVertices(vertex_data);
 	frustumCalculated = true;
 }
+
+void Camera::SetAABBColliders(vector<Colliders::AABBCollider*>* colliders)
+{
+	this->aabbColliders = colliders;
+}
+
 

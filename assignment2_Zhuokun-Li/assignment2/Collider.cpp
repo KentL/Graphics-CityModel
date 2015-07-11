@@ -1,11 +1,14 @@
 #include "Collider.h"
 
-
-Collider::Collider()
+namespace Colliders
 {
+	Collider::Collider()
+	{
+	}
+
+
+	Collider::~Collider()
+	{
+	}
 }
 
-
-Collider::~Collider()
-{
-}

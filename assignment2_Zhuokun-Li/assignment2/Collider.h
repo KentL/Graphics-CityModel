@@ -4,24 +4,26 @@
 #include "stdafx.h"
 
 using namespace glm;
-
-enum ColliderType
+namespace Colliders
 {
-	Sphere,
-	AABB
-};
+	enum ColliderType
+	{
+		Sphere,
+		AABB
+	};
 
-class Collider
-{
-protected:
-	ColliderType collider_type;
-	vec3 position;
-public:
-	Collider();
-	~Collider();
-	void setPosition(vec3 pos){ position = pos; }
-	vec3 getPosition() const{ return position; }
-};
+	class Collider
+	{
+	protected:
+		ColliderType collider_type;
+		vec3 position;
+	public:
+		Collider();
+		~Collider();
+		void SetPosition(vec3 pos){ position = pos; }
+		vec3 GetPosition() const{ return position; }
+	};
+}
 
 
 #endif

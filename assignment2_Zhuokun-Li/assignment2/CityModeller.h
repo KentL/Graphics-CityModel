@@ -2,8 +2,9 @@
 #define CITYMODELLER
 #include <vector>
 #include "struct.h"
-
+#include "AABBCollider.h"
 #define SIZE             100
+
 using namespace std;
 
 class CityModeller
@@ -15,6 +16,7 @@ private:
 	vector<singlegrid*>* cross;
 	vector<singlegrid*>* buildingBase;
 	vector<singlegrid*>* space;
+	vector<Colliders::AABBCollider*>* aabbCollidersCollection;
 
 private:
 	void loadBuffer();
@@ -25,6 +27,7 @@ public:
 	void generateCityLayoutData(bool firsttime);
 	void render();
 	std::vector<Vertex2>* getBuffer();
+	std::vector<Colliders::AABBCollider*>* GetAABBColliders();
 	void clearBuffer();
 	
 public:

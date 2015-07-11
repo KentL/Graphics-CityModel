@@ -1,30 +1,46 @@
-﻿Build started 7/3/2015 4:23:49 PM.
+﻿Build started 7/7/2015 5:29:16 AM.
      1>Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\visual studio 2013\VC\bin\CL.exe /c /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\.." /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CollisionDetector.cpp Plane.cpp Ray.cpp
-         Plane.cpp
+         E:\visual studio 2013\VC\bin\CL.exe /c /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\.." /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CollisionDetector.cpp
          CollisionDetector.cpp
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\aabbcollider.h(22): warning C4172: returning address of local variable or temporary
      1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'vec3' : unknown override specifier
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'GetOrigin' : unknown override specifier
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2270: 'SetOrigin' : modifiers not allowed on nonmember functions
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2091: function returns function
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2440: 'return' : cannot convert from 'glm::vec3' to 'glm::vec3 (__cdecl *)(void)'
-                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-         Generating Code...
-         Compiling...
-         Ray.cpp
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'vec3' : unknown override specifier
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C3646: 'GetOrigin' : unknown override specifier
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2270: 'SetOrigin' : modifiers not allowed on nonmember functions
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2091: function returns function
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(18): error C2440: 'return' : cannot convert from 'glm::vec3' to 'glm::vec3 (__cdecl *)(void)'
-                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-         Generating Code...
-     1>Done Building Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" (Build target(s)) -- FAILED.
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisiondetector.cpp(88): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+       Link:
+         E:\visual studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\lib-msvc100" /LIBPATH:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\lib" GLFW.lib glew32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.lib" /MACHINE:X86 Debug\tinystr.obj
+         Debug\tinyxml.obj
+         Debug\tinyxmlerror.obj
+         Debug\tinyxmlparser.obj
+         Debug\W_Buffer.obj
+         Debug\W_BufferManager.obj
+         Debug\W_Common.obj
+         Debug\W_IndexBuffer.obj
+         Debug\W_Material.obj
+         Debug\W_MaterialManager.obj
+         Debug\W_Program.obj
+         Debug\W_ProgramManager.obj
+         Debug\W_Texture.obj
+         Debug\W_TextureManager.obj
+         Debug\W_VertexBuffer.obj
+         Debug\W_VertexDeclaration.obj
+         Debug\AABBCollider.obj
+         Debug\Camera.obj
+         Debug\CityModeller.obj
+         Debug\Collider.obj
+         Debug\collidetest.obj
+         Debug\CollisionDetector.obj
+         Debug\DirectionalLightcpp.obj
+         Debug\FormatTranslator.obj
+         Debug\Frustum.obj
+         Debug\Node.obj
+         Debug\Plane.obj
+         Debug\Ray.obj
+         Debug\Sphere.obj
+         Debug\SphereCollider.obj
+         Debug\example4.obj
+         Debug\main.obj
+         week5.vcxproj -> D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe
+     1>Done Building Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:02.10
+Time Elapsed 00:00:01.33
