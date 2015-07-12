@@ -135,9 +135,11 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="collidetest.h" />
     <ClInclude Include="CollisionDetector.h" />
+    <ClInclude Include="CollisionPackage.h" />
     <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="FormatTranslator.h" />
     <ClInclude Include="Frustum.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Plane.h" />

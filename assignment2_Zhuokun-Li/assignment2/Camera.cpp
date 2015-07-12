@@ -5,7 +5,7 @@
 #include "AABBCollider.h"
 #include "SphereCollider.h"
 #include "CollisionDetector.h"
-
+#include "Helper.h"
 #define SPEED 2
 #define COLLIDER_RADIUS 1
 
@@ -210,55 +210,7 @@ void Camera::cameraMove()
 		float yincreasment = forwDistance*sin(turnUpScale / 180 * PI);
 		float zincreasment = forwDistance*cos(turnUpScale / 180 * PI)*cos(turnLeftScale / 180 * PI) - leftDistance*sin(turnLeftScale / 180 * PI);
 
-#pragma region "Collison Detection Part"
-		vec3 direction = vec3(xincreasment, yincreasment, zincreasment);
-		direction=glm::normalize(direction);
-		vec3 pos_after_changed = this->getPos() + vec3(xincreasment, yincreasment, zincreasment);
-		//detect if collision happened
-
-		Colliders::SphereCollider camera_collider = Colliders::SphereCollider(pos_after_changed,COLLIDER_RADIUS);
-		Geometry::Ray camera_move_ray = Ray(this->getPos(), direction);
-		vector<Plane*> collided_plane = vector<Plane*>();
-		vector<AABBCollider*>collided_aabb = vector<AABBCollider*>();
-		for (int i = 0; i < aabbColliders->size(); i++)
-		{
-			if (CollisionDetector::Does_AABB_Sphere_Collide(aabbColliders->at(i),&camera_collider)==true)
-			{
-				Plane* temp=CollisionDetector::GetAABBRayFirstCollidePlane(aabbColliders->at(i), &camera_move_ray);
-				if (temp!=NULL)
-				{
-					collided_plane.push_back(temp);
-					collided_aabb.push_back(aabbColliders->at(i));
-				}
-			}
-		}
-
-		for (int i = 0; i < collided_plane.size(); i++)
-		{
-			vec3 normal = collided_plane.at(i)->GetNormal();
-			if (glm::abs(normal.x)==1)
-			{
-				xincreasment = 0;
-			}
-			if (glm::abs(normal.y)==1)
-			{
-				yincreasment = 0;
-			}
-			if (glm::abs(normal.z) == 1)
-			{
-				zincreasment = 0;
-			}
-		}
-
-		pos_after_changed = this->getPos()+vec3(xincreasment, yincreasment, zincreasment);
-#pragma endregion
-		//set position
-		this->setPos(pos_after_changed);
-		forwDistance = leftDistance = 0;
-		lastx = newx;
-		lasty = newy;
-		collided_aabb.clear();
-		collided_plane.clear();
+		
 }
 
 void Camera::calculateFrustum()
@@ -284,4 +236,70 @@ void Camera::SetAABBColliders(vector<Colliders::AABBCollider*>* colliders)
 	this->aabbColliders = colliders;
 }
 
+void Camera::CheckCollision(CollisionPackage* collisionPacket)
+{
+	
+}
+
+vec3 Camera::CollideWithWorld(const vec3& pos, const vec3& vel)
+{
+	// All hard-coded distances in this function is
+	// scaled to fit the setting above..
+	float unitScale = unitsPerMeter / 100.0f;
+	float veryCloseDistance = 0.005f * unitScale;
+	// do we need to worry?
+	if (collisionRecursionDepth>5)
+		return pos;
+	CollisionPackage* collisionPackage = new CollisionPackage();
+	// Ok, we need to worry:
+	collisionPackage->velocity = vel;
+	collisionPackage->normalizedVelocity = glm::normalize(vel);
+	collisionPackage->basePoint = pos;
+	collisionPackage->foundCollision = false;
+	// Check for collision (calls the collision routines)
+	// Application specific!!
+	CheckCollision(collisionPackage);
+	// If no collision we just move along the velocity
+	if (collisionPackage->foundCollision == false) {
+		return pos + vel;
+	}
+	// *** Collision occured ***
+	// The original destination point
+	vec3 destinationPoint = pos + vel;
+	vec3 newBasePoint = pos;
+	// only update if we are not already very close
+	// and if so we only move very close to intersection..not
+	// to the exact spot.
+	if (collisionPackage->nearestDistance >= veryCloseDistance)
+	{
+		vec3 v = vel;
+		SetLength(v,collisionPackage->nearestDistance - veryCloseDistance);
+		newBasePoint = collisionPackage->basePoint + V;
+		// Adjust polygon intersection point (so sliding
+		// plane will be unaffected by the fact that we
+		// move slightly less than collision tells us)
+		v = glm::normalize(v);
+		collisionPackage->intersectionPoint -= veryCloseDistance * V;
+	}
+	// Determine the sliding plane
+	vec3 slidePlaneOrigin = collisionPackage->intersectionPoint;
+	vec3 slidePlaneNormal = newBasePoint - collisionPackage->intersectionPoint;
+	slidePlaneNormal=normalize(slidePlaneNormal);
+	Plane slidingPlane(slidePlaneOrigin, slidePlaneNormal);
+	// Again, sorry about formatting.. but look carefully ;)
+	double sdis = slidingPlane.signedDistanceTo(destinationPoint);
+	vec3 newDestinationPoint = destinationPoint - vec3(sdis,sdis,sdis)*slidePlaneNormal;
+	// Generate the slide vector, which will become our new
+	// velocity vector for the next iteration
+	vec3 newVelocityVector = newDestinationPoint - collisionPackage->intersectionPoint;
+	// Recurse:
+	// dont recurse if the new velocity is very small
+	if (newVelocityVector.length() < veryCloseDistance) {
+		return newBasePoint;
+	}
+	collisionRecursionDepth++;
+
+	delete collisionPackage;
+	return CollideWithWorld(newBasePoint, newVelocityVector);
+}
 

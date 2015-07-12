@@ -195,6 +195,10 @@
     <ClInclude Include="CollisionDetector.h">
       <Filter>Class</Filter>
     </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionPackage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wolf">

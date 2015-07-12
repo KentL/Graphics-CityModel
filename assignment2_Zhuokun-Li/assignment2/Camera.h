@@ -6,6 +6,7 @@
 #include "Frustum.h"
 #include <wolf\W_VertexDeclaration.h>
 #include "AABBCollider.h"
+#include "CollisionPackage.h"
 
 
 using namespace std;
@@ -33,6 +34,10 @@ private:
 	float newx, newy, lastx, lasty;
 	bool isfirsttime;
 
+	//Collision Detection Part:
+	// Set this to match application scale..
+	const float unitsPerMeter = 100.0f;
+	int collisionRecursionDepth;
 
 public:
 	Camera();
@@ -54,7 +59,8 @@ public:
 	vec4 getViewDirection();
 
 	void cameraMove();
-
+	vec3 CollideWithWorld(const vec3& pos, const vec3& vel);
+	void CheckCollision(CollisionPackage* collisionPacket);
 };
 
 #endif
