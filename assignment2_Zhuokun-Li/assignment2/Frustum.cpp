@@ -18,9 +18,7 @@ namespace Geometry
 
 	FrustumNode::~FrustumNode()
 	{
-		//delete vertices;
-		//delete normals;
-		//delete distance;
+		
 	}
 	void FrustumNode::setFOV(float fov)
 	{
@@ -103,31 +101,31 @@ namespace Geometry
 	}
 	float* FrustumNode::getDistanceFromVertices()
 	{
-		vec3* tempVector;
+		vec3 tempVector;
 
 		//get near pane distance
-		tempVector = new vec3(vertices[0]);
-		distance[0] = dot(*tempVector, normals[0]);
+		tempVector =  vec3(vertices[0]);
+		distance[0] = dot(tempVector, normals[0]);
 
 		//get far pane distance
-		tempVector = new vec3(vertices[4]);
-		distance[1] = dot(*tempVector, normals[1]);
+		tempVector = vec3(vertices[4]);
+		distance[1] = dot(tempVector, normals[1]);
 
 		//get left pane distance
-		tempVector = new vec3(vertices[4]);
-		distance[2] = dot(*tempVector, normals[2]);
+		tempVector =  vec3(vertices[4]);
+		distance[2] = dot(tempVector, normals[2]);
 
 		//get right pane distance
-		tempVector = new vec3(vertices[5]);
-		distance[3] = dot(*tempVector, normals[3]);
+		tempVector =  vec3(vertices[5]);
+		distance[3] = dot(tempVector, normals[3]);
 
 		//get top pane distance
-		tempVector = new vec3(vertices[5]);
-		distance[4] = dot(*tempVector, normals[4]);
+		tempVector =  vec3(vertices[5]);
+		distance[4] = dot(tempVector, normals[4]);
 
 		//get bottom pane distance
-		tempVector = new vec3(vertices[6]);
-		distance[5] = dot(*tempVector, normals[5]);
+		tempVector =  vec3(vertices[6]);
+		distance[5] = dot(tempVector, normals[5]);
 
 
 		return distance;

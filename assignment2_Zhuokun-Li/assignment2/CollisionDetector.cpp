@@ -23,7 +23,7 @@ bool CollisionDetector::Does_AABB_Sphere_Collide(Colliders::AABBCollider* aabb_c
 	vec3 center;
 
 	center= sphere_collider->GetPosition();
-	radius = sphere_collider->getRadius();
+	radius = 10*sphere_collider->getRadius();
 	position = aabb_collider->GetPosition();
 	length = aabb_collider->GetLength();
 	height = aabb_collider->GetHeight();
@@ -50,7 +50,7 @@ bool CollisionDetector::Does_AABB_Sphere_Collide(Colliders::AABBCollider* aabb_c
 			{
 				return false;
 			}
-			dist += radius*radius;
+			dist += delta*delta;
 		}
 		else
 		{

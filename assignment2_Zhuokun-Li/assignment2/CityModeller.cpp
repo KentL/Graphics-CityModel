@@ -6,7 +6,7 @@
 #include "AABBCollider.h"
 
 #define BEGININGGRID	 0
-#define ROADLENGTH		 100
+#define ROADLENGTH		 70
 #define UNITLENGHT 50
 #define ZERO     0
 #define ONETIME  0.33333333
@@ -473,13 +473,13 @@ void CityModeller::loadBuffer()
 			pos.y = (temp_building->height/2.0)*UNITLENGHT;
 			pos.z = (temp_building->gridCoordinate.x + temp_building->width / 2.0)*UNITLENGHT;
 			//The width and length in grid model is different from the one in AABBCollider Model;
-			double width = temp_building->width*UNITLENGHT - 2 * SPACE;
-			double length = temp_building->length*UNITLENGHT - 2 * SPACE;
+			double width = temp_building->width*UNITLENGHT -2 * SPACE;
+			double length = temp_building->length*UNITLENGHT -2 * SPACE;
 			double height = temp_building->height*UNITLENGHT;
 			aabbCollidersCollection->push_back(new Colliders::AABBCollider(pos, width, length, height));
 		}
 		//ground's collider
-		aabbCollidersCollection->push_back(new Colliders::AABBCollider(vec3(0,0,0),5000,5000,10));
+		aabbCollidersCollection->push_back(new Colliders::AABBCollider(vec3(0,0,0),10000,10000,10));
 
 #pragma endregion
 		printf("city_vertices_data: %d\n", city_vertices_data->size());

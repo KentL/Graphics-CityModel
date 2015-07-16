@@ -36,8 +36,12 @@ private:
 
 	//Collision Detection Part:
 	// Set this to match application scale..
-	const float unitsPerMeter = 100.0f;
+	const float unitsPerMeter = 1000.0f;
 	int collisionRecursionDepth;
+	int collisionSwitch=0;
+
+	//Time recorder
+	double c_lasttime_clicked;
 
 public:
 	Camera();
@@ -61,6 +65,8 @@ public:
 	void cameraMove();
 	vec3 CollideWithWorld(const vec3& pos, const vec3& vel);
 	void CheckCollision(CollisionPackage* collisionPacket);
+	void CollideAndSlide(const vec3& vel);
+
 };
 
 #endif

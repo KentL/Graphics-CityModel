@@ -16,7 +16,6 @@ namespace Geometry
 		float equation[4];
 
 		Plane();
-
 		Plane::Plane(const vec3& origin, const vec3& normal) {
 			this->normal = normal;
 			this->origin = origin;
@@ -48,7 +47,17 @@ namespace Geometry
 			equation[2] = normal.z;
 			equation[3] = -(normal.x*origin.x + normal.y*origin.y+ normal.z*origin.z);
 		}
-		~Plane();
+
+		Plane(const vec3& p1, const vec3& p2, const vec3& p3, const vec3& n)
+		{
+			normal = glm::normalize(n);
+			origin = p1;
+			equation[0] = normal.x;
+			equation[1] = normal.y;
+			equation[2] = normal.z;
+			equation[3] = -(normal.x*origin.x + normal.y*origin.y + normal.z*origin.z);
+		}
+		~Plane(){};
 
 		///<summary>
 		///This function set the distance used to determine the position of the plane

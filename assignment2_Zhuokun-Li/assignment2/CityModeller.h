@@ -3,7 +3,7 @@
 #include <vector>
 #include "struct.h"
 #include "AABBCollider.h"
-#define SIZE             100
+#define SIZE            70
 
 using namespace std;
 
@@ -17,6 +17,7 @@ private:
 	vector<singlegrid*>* buildingBase;
 	vector<singlegrid*>* space;
 	vector<Colliders::AABBCollider*>* aabbCollidersCollection;
+	public:	vector<Vertex1>* collider_vertex;//For debug
 
 private:
 	void loadBuffer();
