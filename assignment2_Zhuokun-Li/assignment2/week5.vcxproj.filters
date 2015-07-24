@@ -87,6 +87,15 @@
     <ClCompile Include="CollisionDetector.cpp">
       <Filter>Class\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>Class\SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="CubemapTexture.cpp">
+      <Filter>Class\SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBoxTechnique.cpp">
+      <Filter>Class\SkyBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\wolf\W_Buffer.h">
@@ -198,6 +207,15 @@
       <Filter>Class\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="SkyBox.h">
+      <Filter>Class\SkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="CubemapTexture.h">
+      <Filter>Class\SkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBoxTechnique.h">
+      <Filter>Class\SkyBox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wolf">
@@ -226,6 +244,9 @@
     </Filter>
     <Filter Include="Class\Collision\Collider">
       <UniqueIdentifier>{f2665f46-e01a-4404-8456-53664a14071b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\SkyBox">
+      <UniqueIdentifier>{aab149f8-5e1b-4119-9514-4aa7675301da}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

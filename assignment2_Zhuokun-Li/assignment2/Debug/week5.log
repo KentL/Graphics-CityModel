@@ -1,41 +1,18 @@
-﻿Build started 7/16/2015 3:08:06 PM.
+﻿Build started 7/24/2015 12:32:03 PM.
      1>Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\visual studio 2013\VC\bin\CL.exe /c /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\.." /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp
-         Camera.cpp
-     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\glfw\include\gl\glfw.h(74) : see previous definition of 'APIENTRY'
-     1>c:\program files (x86)\windows kits\8.1\include\um\wingdi.h(32): warning C4005: 'WINGDIAPI' : macro redefinition
-                 d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\glfw\include\gl\glfw.h(91) : see previous definition of 'WINGDIAPI'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         E:\visual studio 2013\VC\bin\CL.exe /c /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\.." /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt week5\example4.cpp
+         example4.cpp
      1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(29): warning C4800: 'uint32' : forcing value to bool 'true' or 'false' (performance warning)
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(109): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(124): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(134): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(135): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(143): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(144): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(154): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(155): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(166): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(171): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(172): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(189): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(193): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(194): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(208): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(212): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(213): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\collisionhelper.h(284): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(119): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(120): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(142): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(146): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(184): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(194): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(265): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\camera.cpp(272): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(48): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(80): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(86): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(88): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(113): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(148): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(164): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(172): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(173): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Link:
          E:\visual studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\lib-msvc100" /LIBPATH:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\lib" GLFW.lib glew32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.lib" /MACHINE:X86 Debug\tinystr.obj
          Debug\tinyxml.obj
@@ -58,11 +35,14 @@
          Debug\CityModeller.obj
          Debug\Collider.obj
          Debug\CollisionDetector.obj
+         Debug\CubemapTexture.obj
          Debug\DirectionalLightcpp.obj
          Debug\FormatTranslator.obj
          Debug\Frustum.obj
          Debug\Node.obj
          Debug\Ray.obj
+         Debug\SkyBox.obj
+         Debug\SkyBoxTechnique.obj
          Debug\Sphere.obj
          Debug\SphereCollider.obj
          Debug\example4.obj
@@ -72,4 +52,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.53
+Time Elapsed 00:00:01.45

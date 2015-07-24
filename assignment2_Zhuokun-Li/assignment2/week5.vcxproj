@@ -101,11 +101,14 @@
     <ClCompile Include="CityModeller.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionDetector.cpp" />
+    <ClCompile Include="CubemapTexture.cpp" />
     <ClCompile Include="DirectionalLightcpp.cpp" />
     <ClCompile Include="FormatTranslator.cpp" />
     <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+    <ClCompile Include="SkyBoxTechnique.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="week5\example4.cpp" />
@@ -133,6 +136,7 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionDetector.h" />
     <ClInclude Include="CollisionPackage.h" />
+    <ClInclude Include="CubemapTexture.h" />
     <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="FormatTranslator.h" />
     <ClInclude Include="Frustum.h" />
@@ -142,6 +146,8 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Ray.h" />
+    <ClInclude Include="SkyBox.h" />
+    <ClInclude Include="SkyBoxTechnique.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="stdafx.h" />
