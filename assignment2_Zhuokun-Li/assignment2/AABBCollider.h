@@ -37,6 +37,7 @@ namespace Colliders
 
 		//Flags
 		bool dirty=true;
+		bool planeConstructed = false;
 		ColliderType collider_type = AABB;
 
 	public:
@@ -66,7 +67,7 @@ namespace Colliders
 		///This function return an array of the pointers to the Plane objects in the AABB object.
 		///Return: {front,back,left,right,top,bottom}
 		///</summary>
-		Plane** GetPlanes() ;
+		void GetPlanes(Plane** p_array) ;
 
 		Plane* GetFrontPlane();
 		Plane* GetBackPlane();
@@ -78,9 +79,5 @@ namespace Colliders
 		ColliderType ColliderType();
 	private:
 		void CalculatePlanes();
-		void CalculateMinMaxCoordinate()
-		{
-			
-		}
 	};
 }

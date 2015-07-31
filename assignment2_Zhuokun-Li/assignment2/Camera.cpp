@@ -5,9 +5,12 @@
 #include "AABBCollider.h"
 #include "SphereCollider.h"
 #include "CollisionDetector.h"
-#include "Helper.h"
-#define SPEED 2
+#include "CollisionHelper.h"
+#include "Triangle.h"
+#define SPEED 8
 #define COLLIDER_RADIUS 1
+
+using namespace Geometry;
 
 Camera::Camera() 
 {
@@ -15,6 +18,7 @@ Camera::Camera()
 	addChild(frustum);
 	turnLeftScale = turnUpScale = 0;
 	leftDistance = forwDistance = 0;
+	c_lasttime_clicked = glfwGetTime(); 
 }
 
 Camera::~Camera()
@@ -210,7 +214,23 @@ void Camera::cameraMove()
 		float yincreasment = forwDistance*sin(turnUpScale / 180 * PI);
 		float zincreasment = forwDistance*cos(turnUpScale / 180 * PI)*cos(turnLeftScale / 180 * PI) - leftDistance*sin(turnLeftScale / 180 * PI);
 
-		
+		if (glfwGetKey(67)==GLFW_PRESS&&(glfwGetTime() -c_lasttime_clicked)>0.5)
+		{
+			collisionSwitch = (collisionSwitch + 1) % 2;
+			c_lasttime_clicked = glfwGetTime();
+		}
+		if (collisionSwitch==1)
+		{
+			CollideAndSlide(vec3(xincreasment, yincreasment, zincreasment));
+		}
+		else
+		{
+			myPosition += vec3(xincreasment, yincreasment, zincreasment);
+		}
+		forwDistance = 0;
+		leftDistance = 0;
+		lastx = newx;
+		lasty = newy;
 }
 
 void Camera::calculateFrustum()
@@ -236,9 +256,30 @@ void Camera::SetAABBColliders(vector<Colliders::AABBCollider*>* colliders)
 	this->aabbColliders = colliders;
 }
 
-void Camera::CheckCollision(CollisionPackage* collisionPacket)
+void Camera::CheckCollision(CollisionPackage* collisionPackage)
 {
-	
+	double radius = 10*collisionPackage->eRadius.x;
+	vec3 pos = collisionPackage->basePoint;
+	SphereCollider* sphere = new SphereCollider(pos, radius);
+	vector<AABBCollider*> collided_aabbs = vector<AABBCollider*>();
+	for (int i = 0; i < aabbColliders->size(); i++)
+	{
+		if (CollisionDetector::Does_AABB_Sphere_Collide(aabbColliders->at(i),sphere))
+		{
+			collided_aabbs.push_back(aabbColliders->at(i));
+		}
+	}
+	for (int i = 0; i < collided_aabbs.size(); i++)
+	{
+		Geometry::Triangle triangles[12];
+		ConstructTriangleFromAABB(collided_aabbs.at(i), triangles);
+		for (int j = 0; j < 12; j++)
+		{
+			CheckTriangle(collisionPackage, triangles[j].vertex1, triangles[j].vectex2, triangles[j].vectex3,triangles[j].normal);
+		}
+	}
+
+	delete sphere;
 }
 
 vec3 Camera::CollideWithWorld(const vec3& pos, const vec3& vel)
@@ -256,6 +297,7 @@ vec3 Camera::CollideWithWorld(const vec3& pos, const vec3& vel)
 	collisionPackage->normalizedVelocity = glm::normalize(vel);
 	collisionPackage->basePoint = pos;
 	collisionPackage->foundCollision = false;
+	collisionPackage->eRadius = vec3(1, 1, 1);
 	// Check for collision (calls the collision routines)
 	// Application specific!!
 	CheckCollision(collisionPackage);
@@ -274,12 +316,12 @@ vec3 Camera::CollideWithWorld(const vec3& pos, const vec3& vel)
 	{
 		vec3 v = vel;
 		SetLength(v,collisionPackage->nearestDistance - veryCloseDistance);
-		newBasePoint = collisionPackage->basePoint + V;
+		newBasePoint = collisionPackage->basePoint + v;
 		// Adjust polygon intersection point (so sliding
 		// plane will be unaffected by the fact that we
 		// move slightly less than collision tells us)
 		v = glm::normalize(v);
-		collisionPackage->intersectionPoint -= veryCloseDistance * V;
+		collisionPackage->intersectionPoint -= veryCloseDistance * v;
 	}
 	// Determine the sliding plane
 	vec3 slidePlaneOrigin = collisionPackage->intersectionPoint;
@@ -303,3 +345,22 @@ vec3 Camera::CollideWithWorld(const vec3& pos, const vec3& vel)
 	return CollideWithWorld(newBasePoint, newVelocityVector);
 }
 
+void Camera::CollideAndSlide(const vec3& vel)
+{
+	CollisionPackage* collisionPackage = new CollisionPackage();
+	// Do collision detection:
+	collisionPackage->R3Position = this->myPosition;
+	collisionPackage->R3Velocity = vel;
+	collisionPackage->eRadius = vec3(1, 1, 1);
+	// calculate position and velocity in eSpace
+	vec3 eSpacePosition = collisionPackage->R3Position;// / collisionPackage->eRadius;
+	vec3 eSpaceVelocity = collisionPackage->R3Velocity;// / collisionPackage->eRadius;
+
+	// Iterate until we have our final position.
+	collisionRecursionDepth = 0;
+	vec3 finalPosition = CollideWithWorld(eSpacePosition, eSpaceVelocity);
+	// Convert final result back to R3:
+	finalPosition = finalPosition*collisionPackage->eRadius;
+	// Move the entity (application specific function)
+	myPosition = finalPosition;
+}

@@ -13,7 +13,6 @@
 #include "W_Common.h"
 #include "examples.h"
 #include <Windows.h>
-#include "assignment2\collidetest.h"
 #include <vector>
 
 

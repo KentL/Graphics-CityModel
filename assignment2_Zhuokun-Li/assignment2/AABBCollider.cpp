@@ -22,7 +22,17 @@ namespace Colliders
 	AABBCollider::AABBCollider(double width, double length, double height){ this->length = length; this->width = width; this->height = height; dirty = true; }
 	AABBCollider::AABBCollider(vec3 pos, double width, double length, double height){ position = pos; this->width = width; this->length = length; this->height = height; dirty = true; }
 	AABBCollider::~AABBCollider()
-	{}
+	{
+		if (planeConstructed)
+		{
+			delete front;
+			delete back;
+			delete left;
+			delete right;
+			delete top;
+			delete bottom;
+		}
+	}
 
 	//Setters
 	void AABBCollider::SetLength(double length){ this->length = length; dirty = true; }
@@ -34,14 +44,18 @@ namespace Colliders
 	double  AABBCollider::GetWidth() const { return width; }
 	double  AABBCollider::GetLength() const { return length; }
 	double  AABBCollider::GetHeight() const { return height; }
-	Plane**  AABBCollider::GetPlanes()
+	void  AABBCollider::GetPlanes(Plane** p_array)
 	{ 
 		if (dirty)
 		{
 			CalculatePlanes();
 		}
-		Plane* planes[] = { front, back, left, right, top, bottom }; 
-		return planes; 
+		p_array[0] = front;
+		p_array[1] = back;
+		p_array[2] = left;
+		p_array[3] = right;
+		p_array[4] = top;
+		p_array[5] = bottom;
 	}
 	Plane* AABBCollider::GetFrontPlane()
 	{
@@ -103,5 +117,7 @@ namespace Colliders
 		 right = new Plane(vec3(1, 0, 0), position.x + length / 2);
 		 top = new Plane(vec3(0, 1, 0), position.y + height / 2);
 		 bottom = new Plane(vec3(0, -1, 0), position.y - height / 2);
+
+		 planeConstructed = true;
 	}
 }

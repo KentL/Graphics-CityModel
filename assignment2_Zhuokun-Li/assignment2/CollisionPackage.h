@@ -1,3 +1,6 @@
+#ifndef COLLISIONPACKAGE
+#define COLLISIONPACKAGE
+
 #include "stdafx.h"	
 
 using namespace glm;
@@ -17,3 +20,5 @@ public:
 	double nearestDistance;
 	vec3 intersectionPoint;
 };
+
+#endif

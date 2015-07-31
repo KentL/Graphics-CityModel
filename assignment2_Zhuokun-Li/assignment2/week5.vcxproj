@@ -100,13 +100,11 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CityModeller.cpp" />
     <ClCompile Include="Collider.cpp" />
-    <ClCompile Include="collidetest.cpp" />
     <ClCompile Include="CollisionDetector.cpp" />
     <ClCompile Include="DirectionalLightcpp.cpp" />
     <ClCompile Include="FormatTranslator.cpp" />
     <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="SphereCollider.cpp" />
@@ -133,12 +131,12 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CityModeller.h" />
     <ClInclude Include="Collider.h" />
-    <ClInclude Include="collidetest.h" />
     <ClInclude Include="CollisionDetector.h" />
     <ClInclude Include="CollisionPackage.h" />
     <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="FormatTranslator.h" />
     <ClInclude Include="Frustum.h" />
+    <ClInclude Include="CollisionHelper.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Node.h" />
@@ -149,6 +147,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="SurfaceMaterial.h" />
+    <ClInclude Include="Triangle.h" />
     <ClInclude Include="week5\examples.h" />
   </ItemGroup>
   <ItemGroup>

@@ -39,7 +39,6 @@
     <ClCompile Include="..\wolf\W_VertexDeclaration.cpp">
       <Filter>wolf</Filter>
     </ClCompile>
-    <ClCompile Include="collidetest.cpp" />
     <ClCompile Include="Camera.cpp">
       <Filter>Class</Filter>
     </ClCompile>
@@ -65,21 +64,18 @@
       <Filter>Tiny</Filter>
     </ClCompile>
     <ClCompile Include="AABBCollider.cpp">
-      <Filter>Class\Collider</Filter>
+      <Filter>Class\Collision\Collider</Filter>
     </ClCompile>
     <ClCompile Include="SphereCollider.cpp">
-      <Filter>Class\Collider</Filter>
+      <Filter>Class\Collision\Collider</Filter>
     </ClCompile>
     <ClCompile Include="Collider.cpp">
-      <Filter>Class\Collider</Filter>
+      <Filter>Class\Collision\Collider</Filter>
     </ClCompile>
     <ClCompile Include="Frustum.cpp">
       <Filter>Class\Geometry</Filter>
     </ClCompile>
     <ClCompile Include="Sphere.cpp">
-      <Filter>Class\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="Plane.cpp">
       <Filter>Class\Geometry</Filter>
     </ClCompile>
     <ClCompile Include="Ray.cpp">
@@ -89,7 +85,7 @@
       <Filter>Class\Light</Filter>
     </ClCompile>
     <ClCompile Include="CollisionDetector.cpp">
-      <Filter>Class</Filter>
+      <Filter>Class\Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,9 +131,6 @@
     <ClInclude Include="week5\examples.h">
       <Filter>headfile</Filter>
     </ClInclude>
-    <ClInclude Include="collidetest.h">
-      <Filter>headfile</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Class</Filter>
     </ClInclude>
@@ -145,9 +138,6 @@
       <Filter>Class</Filter>
     </ClInclude>
     <ClInclude Include="CityModeller.h">
-      <Filter>Class</Filter>
-    </ClInclude>
-    <ClInclude Include="Light.h">
       <Filter>Class</Filter>
     </ClInclude>
     <ClInclude Include="struct.h">
@@ -166,13 +156,13 @@
       <Filter>headfile</Filter>
     </ClInclude>
     <ClInclude Include="AABBCollider.h">
-      <Filter>Class\Collider</Filter>
+      <Filter>Class\Collision\Collider</Filter>
     </ClInclude>
     <ClInclude Include="SphereCollider.h">
-      <Filter>Class\Collider</Filter>
+      <Filter>Class\Collision\Collider</Filter>
     </ClInclude>
     <ClInclude Include="Collider.h">
-      <Filter>Class\Collider</Filter>
+      <Filter>Class\Collision\Collider</Filter>
     </ClInclude>
     <ClInclude Include="SurfaceMaterial.h">
       <Filter>wolf</Filter>
@@ -192,13 +182,22 @@
     <ClInclude Include="DirectionalLight.h">
       <Filter>Class\Light</Filter>
     </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Class\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionPackage.h">
+      <Filter>Class\Collision</Filter>
+    </ClInclude>
     <ClInclude Include="CollisionDetector.h">
-      <Filter>Class</Filter>
+      <Filter>Class\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Helper.h">
-      <Filter>Class</Filter>
+    <ClInclude Include="Light.h">
+      <Filter>Class\Light</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionPackage.h" />
+    <ClInclude Include="CollisionHelper.h">
+      <Filter>Class\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wolf">
@@ -216,14 +215,17 @@
     <Filter Include="Tiny">
       <UniqueIdentifier>{a937be29-1183-4a85-b457-fbc8153c6002}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Class\Collider">
-      <UniqueIdentifier>{f2665f46-e01a-4404-8456-53664a14071b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Class\Geometry">
       <UniqueIdentifier>{d0e29aa5-15ab-4029-9cb4-657fdd97c951}</UniqueIdentifier>
     </Filter>
     <Filter Include="Class\Light">
       <UniqueIdentifier>{ed8599ae-71f5-4fd0-b3f6-ed9822a27ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Collision">
+      <UniqueIdentifier>{81798c3d-d834-4e49-9726-f77aa84eb2d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Collision\Collider">
+      <UniqueIdentifier>{f2665f46-e01a-4404-8456-53664a14071b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

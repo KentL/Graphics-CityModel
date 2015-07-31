@@ -5,7 +5,7 @@
 //========================================================================
 #define GLFW_INCLUDE_GL3
 #define GLFW_NO_GLU
-#define TIME_ELAPSE_SPEED 3
+#define TIME_ELAPSE_SPEED 10
 #include <stdio.h>
 #include <stdlib.h>
 #ifndef __APPLE__
@@ -33,6 +33,10 @@ static wolf::VertexBuffer* g_pVB1 = 0;
 static wolf::VertexDeclaration* g_pDecl = 0;
 static wolf::Program* g_pProgram1 = 0;
 
+static wolf::VertexBuffer* g_pVB2 = 0;
+static wolf::VertexDeclaration* g_pDecl2 = 0;
+static wolf::Program* g_pProgram2 = 0;
+
 static wolf::MaterialManager* g_Mat_Manager = 0;
 static wolf::Material* mat = 0;
 static wolf::Texture* tex_map = 0;
@@ -47,7 +51,7 @@ static Camera* mainCamera;
 static CityModeller* cityModeller;
 
 int key_f_pressed_counter = 0;//record how many times key "F" is pressed to change the fov of maincamer
-
+int key_l_pressed_counter = 0;//record how many times key "L" is pressed to turn light effect on and off
 #pragma endregion
 
 void InitExample4(bool first_time)
@@ -55,10 +59,10 @@ void InitExample4(bool first_time)
 	if (first_time)
 	{
 		mainCamera = new Camera();
-		mainCamera->setPos(vec3(0, 0, -15));
+		mainCamera->setPos(vec3(0, 30, -15));
 		mainCamera->setFOV(45);
 		mainCamera->setNear(0.1f);
-		mainCamera->setFar(3000.0f);
+		mainCamera->setFar(30000.0f);
 		mainCamera->setAspect(1280.0f / 720.0f);
 
 		cityModeller = new CityModeller();
@@ -74,13 +78,13 @@ void InitExample4(bool first_time)
 
 		g_maskSurface = new SurfaceMaterial();
 		g_maskSurface->setDiffuse( wolf::Color4(1, 1, 0.8, 1));
-		g_maskSurface->setAmbient(wolf::Color4(0.5, 0.5, 0.5, 1));
+		g_maskSurface->setAmbient(wolf::Color4(1, 1, 1, 1));
 		g_maskSurface->setSpecular(wolf::Color4(1, 1, 1, 200));
 
 		// Initialize the light parameters
 		g_light = new DirectionalLight();
 		g_light->setDiffuse(wolf::Color4(1.0, 1.0, 0.6, 1));
-		g_light->setAmbient(wolf::Color4(0.5, 0.5, 0.5, 1));
+		g_light->setAmbient(wolf::Color4(1, 1, 1, 1));
 		g_light->setSpecular(wolf::Color4(0.2, 0.2, 0.1, 1));
 	}
 
@@ -122,6 +126,9 @@ void RenderExample4()
 		}
 	}
 	
+	
+	
+
 	//press 'R' to change the layout
 	if (glfwGetKey(82) == GLFW_PRESS&&!keypressed)
 	{
@@ -135,25 +142,44 @@ void RenderExample4()
 
 	mainCamera->cameraMove();
 
-	angle += (double)TIME_ELAPSE_SPEED/1000.0;
-	
-	g_light->rotate(angle);
-	
-	//make the light's intensity decrease gradually
-	float dir_light_vertical_direction = g_light->getDirection().y;
-	float dir_light_decrease_factor = dir_light_vertical_direction;
-	if ( dir_light_vertical_direction< 0)
+	//press 'L' to turn light effect on and off
+	if (glfwGetKey(76) == GLFW_PRESS&&glfwGetTime() - lasttime > 0.5)
 	{
-		g_light->setDiffuse(wolf::Color4(-1.0*dir_light_decrease_factor, -1.0*dir_light_decrease_factor, -0.8*dir_light_decrease_factor, 1));
-		g_light->setSpecular(wolf::Color4(-0.2*dir_light_decrease_factor, -0.2*dir_light_decrease_factor, -0.1*dir_light_decrease_factor, 1));
-	}
-	else
-	{
-		g_light->setDiffuse(wolf::Color4(0.0, 0.0, 0.0, 1));
-		g_light->setSpecular(wolf::Color4(0.0, 0.0, 0.0, 1));
-	}
+		lasttime = glfwGetTime();
+		key_l_pressed_counter = (key_l_pressed_counter + 1) % 2;
 
-	g_light->setDirection(glm::vec3(0.0f, sinf(angle), cosf(angle)));
+		if (key_l_pressed_counter == 0)
+		{
+			g_maskSurface->setAmbient(wolf::Color4(1, 1, 1, 1));
+			g_light->setAmbient(wolf::Color4(1, 1, 1, 1));
+		}
+		else
+		{
+			g_maskSurface->setAmbient(wolf::Color4(0.5, 0.5, 0.5, 1));
+			g_light->setAmbient(wolf::Color4(0.5, 0.5, 0.5, 1));
+		}
+	}
+	if (key_l_pressed_counter==1)
+	{
+		angle += (double)TIME_ELAPSE_SPEED / 1000.0;
+		g_light->rotate(angle);
+
+		//make the light's intensity decrease gradually
+		float dir_light_vertical_direction = g_light->getDirection().y;
+		float dir_light_decrease_factor = dir_light_vertical_direction;
+		if (dir_light_vertical_direction < 0)
+		{
+			g_light->setDiffuse(wolf::Color4(-1.0*dir_light_decrease_factor, -1.0*dir_light_decrease_factor, -0.8*dir_light_decrease_factor, 1));
+			g_light->setSpecular(wolf::Color4(-0.2*dir_light_decrease_factor, -0.2*dir_light_decrease_factor, -0.1*dir_light_decrease_factor, 1));
+		}
+		else
+		{
+			g_light->setDiffuse(wolf::Color4(0.0, 0.0, 0.0, 1));
+			g_light->setSpecular(wolf::Color4(0.0, 0.0, 0.0, 1));
+		}
+
+		g_light->setDirection(glm::vec3(0.0f, sinf(angle), cosf(angle)));
+	}
 
 	glm::mat4 mProj = mainCamera->getProjectionMatrix();
 	glm::mat4 mView = mainCamera->getViewMatrix();
