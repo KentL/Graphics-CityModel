@@ -10,3 +10,5 @@ SkyBoxTechnique::SkyBoxTechnique()
 SkyBoxTechnique::~SkyBoxTechnique()
 {
 }
+
+

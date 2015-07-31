@@ -9,7 +9,7 @@ using namespace glm;
 class CubemapTexture
 {
 public:
-	CubemapTexture(const string& Directory,
+	CubemapTexture(
 		const string& PosXFileName, 
 		const string& NegXFileName,
 		const string& PosYFileName, 

@@ -262,6 +262,12 @@
     <None Include="..\data\assignment2\city_model.vsh">
       <Filter>data</Filter>
     </None>
+    <None Include="..\data\assignment2\skybox.fsh">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\assignment2\skybox.vsh">
+      <Filter>data</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\data\assignment2\grass.tga">

@@ -161,6 +161,8 @@
     <None Include="..\data\assignment2\cube.vsh" />
     <None Include="..\data\assignment2\city_model.fsh" />
     <None Include="..\data\assignment2\city_model.vsh" />
+    <None Include="..\data\assignment2\skybox.fsh" />
+    <None Include="..\data\assignment2\skybox.vsh" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\data\assignment2\grass.tga" />

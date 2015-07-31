@@ -24,6 +24,7 @@
 #include <vector>
 #include <struct.h>
 #include <SurfaceMaterial.h>
+#include "SkyBox.h"
 
 #pragma region define variables
 static float s_fRotation = 0;
@@ -49,7 +50,7 @@ float lasttime = glfwGetTime();
 
 static Camera* mainCamera;
 static CityModeller* cityModeller;
-
+static SkyBox* skybox;
 int key_f_pressed_counter = 0;//record how many times key "F" is pressed to change the fov of maincamer
 int key_l_pressed_counter = 0;//record how many times key "L" is pressed to turn light effect on and off
 #pragma endregion
@@ -66,7 +67,7 @@ void InitExample4(bool first_time)
 		mainCamera->setAspect(1280.0f / 720.0f);
 
 		cityModeller = new CityModeller();
-
+		
 		tex_map = wolf::TextureManager::CreateTexture("data/assignment2/texturemap2.tga");
 		tex_map->SetFilterMode(wolf::Texture::FM_Nearest, wolf::Texture::FM_Nearest);
 		tex_map->SetWrapMode(wolf::Texture::WM_Clamp, wolf::Texture::WM_Clamp);
@@ -86,6 +87,19 @@ void InitExample4(bool first_time)
 		g_light->setDiffuse(wolf::Color4(1.0, 1.0, 0.6, 1));
 		g_light->setAmbient(wolf::Color4(1, 1, 1, 1));
 		g_light->setSpecular(wolf::Color4(0.2, 0.2, 0.1, 1));
+
+		//Initialize SkyBox properties
+		string textureNames[] = { "data/assignment2/skybox_texture_posX.tga", "data/assignment2/skybox_texture_negX.tga",
+								"data/assignment2/skybox_texture_posY.tga", "data/assignment2/skybox_texture_negY.tga",
+								"data/assignment2/skybox_texture_posZ.tga", "data/assignment2/skybox_texture_negZ.tga" };
+		skybox = new SkyBox();
+		skybox->SetCamera(mainCamera);
+		skybox->SetPositon(vec3(0, 0, 0));
+		skybox->SetProgram("data/assignment2/skybox.vsh", "data/assignment2/skybox.fsh");
+		skybox->SetScale(vec3(20, 20, 20));
+		skybox->SetTexture(textureNames);
+		skybox->PrepareData();
+		
 	}
 
 	cityModeller->generateCityLayoutData(first_time);
@@ -101,6 +115,8 @@ void InitExample4(bool first_time)
 	g_pDecl->AppendAttribute(wolf::AT_Normal, 3, wolf::CT_Float);
 	g_pDecl->SetVertexBuffer(g_pVB1);
 	g_pDecl->End();
+
+
 }
 
 
@@ -202,8 +218,10 @@ void RenderExample4()
 	
 	g_pDecl->Bind();
 	mat->Apply();
-	
+
 	glDrawArrays(GL_TRIANGLES, 0, cityModeller->getBuffer()->size());
+
+	skybox->Render();
 }
 
 

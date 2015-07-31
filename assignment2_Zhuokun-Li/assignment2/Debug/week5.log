@@ -1,55 +1,9 @@
-﻿Build started 7/24/2015 12:32:03 PM.
+﻿Build started 7/31/2015 5:13:42 PM.
      1>Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         E:\visual studio 2013\VC\bin\CL.exe /c /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\.." /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt week5\example4.cpp
-         example4.cpp
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(48): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(80): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(86): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(88): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(113): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(148): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(164): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(172): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\my document\my documents\upei\courses\graphics\assignments\1semester\assignment2_zhuokun-li\assignment2_zhuokun-li\assignment2\week5\example4.cpp(173): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
-         E:\visual studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glfw\lib-msvc100" /LIBPATH:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\..\glew\lib" GLFW.lib glew32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.lib" /MACHINE:X86 Debug\tinystr.obj
-         Debug\tinyxml.obj
-         Debug\tinyxmlerror.obj
-         Debug\tinyxmlparser.obj
-         Debug\W_Buffer.obj
-         Debug\W_BufferManager.obj
-         Debug\W_Common.obj
-         Debug\W_IndexBuffer.obj
-         Debug\W_Material.obj
-         Debug\W_MaterialManager.obj
-         Debug\W_Program.obj
-         Debug\W_ProgramManager.obj
-         Debug\W_Texture.obj
-         Debug\W_TextureManager.obj
-         Debug\W_VertexBuffer.obj
-         Debug\W_VertexDeclaration.obj
-         Debug\AABBCollider.obj
-         Debug\Camera.obj
-         Debug\CityModeller.obj
-         Debug\Collider.obj
-         Debug\CollisionDetector.obj
-         Debug\CubemapTexture.obj
-         Debug\DirectionalLightcpp.obj
-         Debug\FormatTranslator.obj
-         Debug\Frustum.obj
-         Debug\Node.obj
-         Debug\Ray.obj
-         Debug\SkyBox.obj
-         Debug\SkyBoxTechnique.obj
-         Debug\Sphere.obj
-         Debug\SphereCollider.obj
-         Debug\example4.obj
-         Debug\main.obj
+     1>Link:
          week5.vcxproj -> D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe
      1>Done Building Project "D:\My document\My documents\UPEI\courses\graphics\assignments\1semester\assignment2_Zhuokun-Li\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.45
+Time Elapsed 00:00:00.14

@@ -4,7 +4,7 @@
 
 using namespace glm;
 
-CubemapTexture::CubemapTexture(const string& Directory,
+CubemapTexture::CubemapTexture(
 		const string& PosXFileName, 
 		const string& NegXFileName,
 		const string& PosYFileName, 
@@ -61,3 +61,4 @@ void CubemapTexture::Bind(GLenum TextureUnit)
 	glActiveTexture(TextureUnit);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, m_textureObj);
 }
+
