@@ -7,7 +7,7 @@
 #include "CollisionDetector.h"
 #include "CollisionHelper.h"
 #include "Triangle.h"
-#define SPEED 8
+#define SPEED 16
 #define COLLIDER_RADIUS 1
 
 using namespace Geometry;
