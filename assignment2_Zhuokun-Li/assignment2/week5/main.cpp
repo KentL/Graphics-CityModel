@@ -60,7 +60,7 @@ int main( void )
     // Enable vertical sync (on cards that support it)
     glfwSwapInterval( 1 );
 
-	InitExample4(true); 
+	Init(true); 
   
     do
     {	
@@ -81,7 +81,7 @@ int main( void )
 		
 
 		//render
-		RenderExample4();
+		Render();
 		
 		glfwSwapBuffers();
 

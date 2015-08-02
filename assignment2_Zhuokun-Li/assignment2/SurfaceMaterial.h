@@ -1,3 +1,6 @@
+#ifndef SURFACEMATERIAL
+#define SURFACEMATERIAL
+	
 #include <wolf\W_Texture.h>
 class SurfaceMaterial
 {
@@ -16,5 +19,7 @@ private:
 	wolf::Color4	m_diffuse;
 	wolf::Color4	m_specular; // w stores the specular power
 };
+
+#endif
 
 

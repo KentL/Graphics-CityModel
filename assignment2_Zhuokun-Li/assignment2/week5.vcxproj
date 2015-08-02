@@ -108,10 +108,9 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="SkyBox.cpp" />
-    <ClCompile Include="SkyBoxTechnique.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="SphereCollider.cpp" />
-    <ClCompile Include="week5\example4.cpp" />
+    <ClCompile Include="week5\City Model.cpp" />
     <ClCompile Include="week5\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +146,6 @@
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="SkyBox.h" />
-    <ClInclude Include="SkyBoxTechnique.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="stdafx.h" />

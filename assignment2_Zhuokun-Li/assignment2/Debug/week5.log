@@ -1,19 +1,12 @@
-﻿Build started 2015/8/1 9:06:26.
+﻿Build started 2015/8/1 10:53:31.
      1>Project "C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\.." /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt week5\example4.cpp
-         example4.cpp
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(49): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(82): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(88): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(90): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(130): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(165): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(181): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(189): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(190): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\example4.cpp(204): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\.." /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt week5\main.cpp
+         main.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(74) : see previous definition of 'APIENTRY'
+     1>c:\program files (x86)\windows kits\8.1\include\um\wingdi.h(32): warning C4005: 'WINGDIAPI' : macro redefinition
+                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(91) : see previous definition of 'WINGDIAPI'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\lib-msvc100" /LIBPATH:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\lib" GLFW.lib glew32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.lib" /MACHINE:X86 Debug\tinystr.obj
          Debug\tinyxml.obj
@@ -43,14 +36,14 @@
          Debug\Node.obj
          Debug\Ray.obj
          Debug\SkyBox.obj
-         Debug\SkyBoxTechnique.obj
          Debug\Sphere.obj
          Debug\SphereCollider.obj
-         Debug\example4.obj
+         "Debug\City Model.obj"
          Debug\main.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          week5.vcxproj -> C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe
      1>Done Building Project "C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.53
+Time Elapsed 00:00:04.08

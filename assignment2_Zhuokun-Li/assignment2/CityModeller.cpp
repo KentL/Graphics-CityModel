@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <stdlib.h> 
 #include <stdafx.h>
-#include "AABBCollider.h"
+
 
 #define BEGININGGRID	 0
 #define ROADLENGTH		 70
@@ -27,6 +27,7 @@
 
 CityModeller::CityModeller()
 {
+	//Create storage vector
 	buildingStore = new vector < building* >();
 	roadStore = new vector<road*>();
 	city_vertices_data = new vector<Vertex2>();
@@ -34,7 +35,27 @@ CityModeller::CityModeller()
 	buildingBase = new vector<singlegrid*>();
 	space = new vector<singlegrid*>();
 	aabbCollidersCollection = new vector<Colliders::AABBCollider*>();
+
+	//random seed
 	srand((unsigned)time(NULL));
+
+	mat = g_Mat_Manager->CreateMaterial("city_model_material");	
+	mat->SetDepthTest(true);
+	mat->SetBlend(false);
+	//Initialize material surface property
+	g_maskSurface = new SurfaceMaterial();
+	g_maskSurface->setDiffuse(wolf::Color4(1, 1, 0.8, 1));
+	g_maskSurface->setAmbient(wolf::Color4(1, 1, 1, 1));
+	g_maskSurface->setSpecular(wolf::Color4(1, 1, 1, 200));
+
+	// Initialize the light parameters
+	g_light = new DirectionalLight();
+	g_light->setDiffuse(wolf::Color4(1.0, 1.0, 0.6, 1));
+	g_light->setAmbient(wolf::Color4(1, 1, 1, 1));
+	g_light->setSpecular(wolf::Color4(0.2, 0.2, 0.1, 1));
+
+	last_time_key_l_pressed = glfwGetTime();
+	lightAngle = 0;
 }
 
 CityModeller::~CityModeller()
@@ -280,6 +301,11 @@ void CityModeller::generateCityLayoutData(bool firsttime)
 	loadBuffer();
 }
 
+void CityModeller::SetCamera(Camera* mainCamera)
+{
+	this->mainCamera = mainCamera;
+}
+
 void CityModeller::loadBuffer()
 {
 		
@@ -482,6 +508,18 @@ void CityModeller::loadBuffer()
 		aabbCollidersCollection->push_back(new Colliders::AABBCollider(vec3(0,0,0),10000,10000,10));
 
 #pragma endregion
+
+#pragma region Load Attributes
+		g_pVB1 = wolf::BufferManager::CreateVertexBuffer(&city_vertices_data->at(0), sizeof(Vertex2) *(city_vertices_data->size()));
+		g_pDecl = new wolf::VertexDeclaration();
+		g_pDecl->Begin();
+		g_pDecl->AppendAttribute(wolf::AT_Position, 3, wolf::CT_Float);
+		g_pDecl->AppendAttribute(wolf::AT_TexCoord1, 2, wolf::CT_Float);
+		g_pDecl->AppendAttribute(wolf::AT_Normal, 3, wolf::CT_Float);
+		g_pDecl->SetVertexBuffer(g_pVB1);
+		g_pDecl->End();
+#pragma endregion 
+
 		printf("city_vertices_data: %d\n", city_vertices_data->size());
 		printf("buildingstore: %d\n", buildingStore->size());
 }
@@ -568,4 +606,84 @@ std::vector<Colliders::AABBCollider*>* CityModeller::GetAABBColliders()
 {
 	return aabbCollidersCollection;
 }
+
+void CityModeller::SetTexture(const string& tex)
+{
+	tex_map = wolf::TextureManager::CreateTexture(tex);
+	tex_map->SetFilterMode(wolf::Texture::FM_Nearest, wolf::Texture::FM_Nearest);
+	tex_map->SetWrapMode(wolf::Texture::WM_Clamp, wolf::Texture::WM_Clamp);
+	mat->SetTexture("tex", tex_map);
+}
+
+void CityModeller::SetProgram(const string& vsh, const string& fsh)
+{
+	mat->SetProgram(vsh,fsh);
+}
+
+void CityModeller::Render()
+{
+	//press 'L' to turn light effect on and off
+	if (glfwGetKey(76) == GLFW_PRESS&&glfwGetTime() - last_time_key_l_pressed > 0.5)
+	{
+		last_time_key_l_pressed = glfwGetTime();
+		key_l_pressed_counter = (key_l_pressed_counter + 1) % 2;
+
+		if (key_l_pressed_counter == 0)
+		{
+			g_maskSurface->setAmbient(wolf::Color4(1, 1, 1, 1));
+			g_light->setAmbient(wolf::Color4(1, 1, 1, 1));
+		}
+		else
+		{
+			g_maskSurface->setAmbient(wolf::Color4(0.5, 0.5, 0.5, 1));
+			g_light->setAmbient(wolf::Color4(0.5, 0.5, 0.5, 1));
+		}
+	}
+	if (key_l_pressed_counter == 1)
+	{
+		lightAngle += (double)TIME_ELAPSE_SPEED/ 1000.0f;
+		g_light->rotate(lightAngle);
+
+		//make the light's intensity decrease gradually
+		float dir_light_vertical_direction = g_light->getDirection().y;
+		float dir_light_decrease_factor = dir_light_vertical_direction;
+		if (dir_light_vertical_direction < 0)
+		{
+			g_light->setDiffuse(wolf::Color4(-1.0*dir_light_decrease_factor, -1.0*dir_light_decrease_factor, -0.8*dir_light_decrease_factor, 1));
+			g_light->setSpecular(wolf::Color4(-0.2*dir_light_decrease_factor, -0.2*dir_light_decrease_factor, -0.1*dir_light_decrease_factor, 1));
+		}
+		else
+		{
+			g_light->setDiffuse(wolf::Color4(0.0, 0.0, 0.0, 1));
+			g_light->setSpecular(wolf::Color4(0.0, 0.0, 0.0, 1));
+		}
+
+		g_light->setDirection(glm::vec3(0.0f, sinf(lightAngle), cosf(lightAngle)));
+	}
+	glm::mat4 mProj = mainCamera->getProjectionMatrix();
+	glm::mat4 mView = mainCamera->getViewMatrix();
+	glm::mat4 mWorld = mProj*mView;
+
+	// Bind Uniforms
+	mat->SetUniform("WorldViewProj", mWorld);
+	mat->SetUniform("ViewDir", glm::vec3(mainCamera->getViewDirection()));
+
+	// Set the light parameters
+	mat->SetUniform("LightAmbient", g_light->getAmbient());
+	mat->SetUniform("LightDiffuse", g_light->getDiffuse());
+	mat->SetUniform("LightSpecular", g_light->getSpecular());
+	mat->SetUniform("LightDir", g_light->getDirection());
+
+	// Set the surface parameters
+	mat->SetUniform("MatAmbient", g_maskSurface->getAmbient());
+	mat->SetUniform("MatDiffuse", g_maskSurface->getDiffuse());
+	mat->SetUniform("MatSpecular", g_maskSurface->getSpecular());
+
+	g_pDecl->Bind();
+	mat->Apply();
+
+	glDrawArrays(GL_TRIANGLES, 0, city_vertices_data->size());
+}
+
+
 

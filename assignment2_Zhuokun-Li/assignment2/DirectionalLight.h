@@ -1,3 +1,6 @@
+#ifndef DIRECTIONALLIGHT
+#define DIRECTIONALLIGHT
+
 #include <Light.h>
 
 class DirectionalLight : public Light
@@ -10,3 +13,5 @@ public:
 	vec3 getDirection(){ return direction; }
 	void rotate(float angle);
 };
+
+#endif

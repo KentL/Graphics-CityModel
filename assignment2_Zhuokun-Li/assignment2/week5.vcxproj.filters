@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="week5\main.cpp" />
-    <ClCompile Include="week5\example4.cpp" />
     <ClCompile Include="..\wolf\W_Buffer.cpp">
       <Filter>wolf</Filter>
     </ClCompile>
@@ -48,9 +47,6 @@
     <ClCompile Include="CityModeller.cpp">
       <Filter>Class</Filter>
     </ClCompile>
-    <ClCompile Include="FormatTranslator.cpp">
-      <Filter>Class</Filter>
-    </ClCompile>
     <ClCompile Include="..\Tiny\tinystr.cpp">
       <Filter>Tiny</Filter>
     </ClCompile>
@@ -93,9 +89,10 @@
     <ClCompile Include="CubemapTexture.cpp">
       <Filter>Class\SkyBox</Filter>
     </ClCompile>
-    <ClCompile Include="SkyBoxTechnique.cpp">
-      <Filter>Class\SkyBox</Filter>
+    <ClCompile Include="FormatTranslator.cpp">
+      <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="week5\City Model.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\wolf\W_Buffer.h">
@@ -152,9 +149,6 @@
     <ClInclude Include="struct.h">
       <Filter>headfile</Filter>
     </ClInclude>
-    <ClInclude Include="FormatTranslator.h">
-      <Filter>Class</Filter>
-    </ClInclude>
     <ClInclude Include="..\Tiny\tinystr.h">
       <Filter>Tiny</Filter>
     </ClInclude>
@@ -206,15 +200,17 @@
     <ClInclude Include="CollisionHelper.h">
       <Filter>Class\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Helper.h" />
     <ClInclude Include="SkyBox.h">
       <Filter>Class\SkyBox</Filter>
     </ClInclude>
     <ClInclude Include="CubemapTexture.h">
       <Filter>Class\SkyBox</Filter>
     </ClInclude>
-    <ClInclude Include="SkyBoxTechnique.h">
-      <Filter>Class\SkyBox</Filter>
+    <ClInclude Include="FormatTranslator.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +243,9 @@
     </Filter>
     <Filter Include="Class\SkyBox">
       <UniqueIdentifier>{aab149f8-5e1b-4119-9514-4aa7675301da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{860a2eab-69e9-4c37-9b4e-530e8b327602}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

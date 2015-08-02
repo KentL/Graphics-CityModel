@@ -1,3 +1,5 @@
+#ifndef LIGHT
+#define LIGHT
 #include <Node.h>
 
 class Light : public Node
@@ -16,3 +18,5 @@ private:
 	wolf::Color4	m_diffuse;
 	wolf::Color4	m_specular;
 };
+
+#endif

@@ -93,7 +93,7 @@ void SkyBox::SetScale(vec3 scale)
 
 void SkyBox::Render()
 {
-	glDepthFunc(GL_LEQUAL);
+	//glDepthFunc(GL_LEQUAL);
 
 	vec3 cameraPos = mainCamera->getPos();
 	mat4 scaleMatrix = glm::scale(m_scale.x, m_scale.y, m_scale.z);
