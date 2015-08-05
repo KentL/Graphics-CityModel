@@ -623,12 +623,12 @@ void CityModeller::SetProgram(const string& vsh, const string& fsh)
 void CityModeller::Render()
 {
 	//press 'L' to turn light effect on and off
-	if (glfwGetKey(76) == GLFW_PRESS&&glfwGetTime() - last_time_key_l_pressed > 0.5)
+	if (glfwGetKey(76) == GLFW_PRESS&&glfwGetKey(GLFW_KEY_LCTRL) != GLFW_PRESS&&glfwGetKey(GLFW_KEY_RCTRL) != GLFW_PRESS&&(glfwGetTime() - last_time_key_l_pressed)> 0.5)
 	{
 		last_time_key_l_pressed = glfwGetTime();
-		key_l_pressed_counter = (key_l_pressed_counter + 1) % 2;
+		key_l_pressed = !key_l_pressed;
 
-		if (key_l_pressed_counter == 0)
+		if (!key_l_pressed)
 		{
 			g_maskSurface->setAmbient(wolf::Color4(1, 1, 1, 1));
 			g_light->setAmbient(wolf::Color4(1, 1, 1, 1));
@@ -639,9 +639,22 @@ void CityModeller::Render()
 			g_light->setAmbient(wolf::Color4(0.5, 0.5, 0.5, 1));
 		}
 	}
-	if (key_l_pressed_counter == 1)
+	//Press Ctrl+L to change rotate the light or not
+	if (glfwGetKey(GLFW_KEY_LCTRL)==GLFW_PRESS||glfwGetKey(GLFW_KEY_RCTRL)==GLFW_PRESS)
 	{
-		lightAngle += (double)TIME_ELAPSE_SPEED/ 1000.0f;
+		if (glfwGetKey(76)==GLFW_PRESS && (glfwGetTime() - last_time_key_l_pressed) > 0.5)
+		{
+			last_time_key_l_pressed = glfwGetTime();
+			rotate_light = !rotate_light;
+		}
+	}
+	//if
+	if (key_l_pressed)
+	{
+		if (rotate_light)
+		{
+			lightAngle += (double)TIME_ELAPSE_SPEED / 1000.0f;
+		}
 		g_light->rotate(lightAngle);
 
 		//make the light's intensity decrease gradually

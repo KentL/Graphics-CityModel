@@ -76,8 +76,6 @@ void Init(bool first_time)
 	mainCamera->SetAABBColliders(cityModeller->GetAABBColliders());
 }
 
-
-
 void Render()
 {
 	//press 'F' to change camera focus lens

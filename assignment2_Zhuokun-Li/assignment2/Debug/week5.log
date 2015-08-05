@@ -1,12 +1,83 @@
-﻿Build started 2015/8/1 10:53:31.
+﻿Build started 2015/8/5 21:05:33.
      1>Project "C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\.." /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt week5\main.cpp
-         main.cpp
-     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(74) : see previous definition of 'APIENTRY'
-     1>c:\program files (x86)\windows kits\8.1\include\um\wingdi.h(32): warning C4005: 'WINGDIAPI' : macro redefinition
-                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(91) : see previous definition of 'WINGDIAPI'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\.." /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CityModeller.cpp
+         CityModeller.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(47): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(53): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(55): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(57): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(282): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(314): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(328): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(330): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(332): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(334): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(336): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(338): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(345): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(347): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(349): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(351): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(353): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(355): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(361): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(363): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(365): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(367): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(369): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(371): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(377): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(379): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(381): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(383): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(385): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(387): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(394): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(396): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(398): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(400): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(402): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(404): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(413): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(416): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(418): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(420): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(422): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(424): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(426): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(429): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(432): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(434): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(436): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(438): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(440): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(442): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(449): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(452): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(454): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(456): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(458): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(460): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(462): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(467): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(470): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(472): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(474): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(476): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(478): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(480): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(494): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(498): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(499): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(500): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(628): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(647): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(656): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(665): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(666): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\lib-msvc100" /LIBPATH:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\lib" GLFW.lib glew32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.lib" /MACHINE:X86 Debug\tinystr.obj
          Debug\tinyxml.obj
@@ -40,10 +111,9 @@
          Debug\SphereCollider.obj
          "Debug\City Model.obj"
          Debug\main.obj
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          week5.vcxproj -> C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe
      1>Done Building Project "C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.08
+Time Elapsed 00:00:01.50

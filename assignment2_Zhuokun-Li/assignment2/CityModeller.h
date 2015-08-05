@@ -29,7 +29,8 @@ private:
 	vector<singlegrid*>* buildingBase;
 	vector<singlegrid*>* space;
 	vector<Colliders::AABBCollider*>* aabbCollidersCollection;
-	int key_l_pressed_counter = 0;//record how many times key "L" is pressed to turn light effect on and off
+	bool key_l_pressed = false;//record how many times key "L" is pressed to turn light effect on and off
+	bool rotate_light = true;//Flag to determine whether light rotates or not
 	wolf::VertexBuffer* g_pVB1 = 0;
 	wolf::VertexDeclaration* g_pDecl = 0;
 	wolf::Program* g_pProgram1 = 0;
