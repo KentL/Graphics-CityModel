@@ -1,7 +1,44 @@
-﻿Build started 2015/8/5 21:05:33.
+﻿Build started 2015/8/7 22:51:05.
      1>Project "C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\12.0\bin\Microsoft.Common.CurrentVersion.targets(1697,5): warning MSB3088: Could not read state file "Debug\week5.vcxprojResolveAssemblyReference.cache". The process cannot access the file 'C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.vcxprojResolveAssemblyReference.cache' because it is being used by another process.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\.." /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CityModeller.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\wolf" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\include" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\.." /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\assignment2" /I"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\Tiny" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Tiny\tinystr.cpp ..\Tiny\tinyxml.cpp ..\Tiny\tinyxmlerror.cpp ..\Tiny\tinyxmlparser.cpp ..\wolf\W_Buffer.cpp ..\wolf\W_BufferManager.cpp ..\wolf\W_Common.cpp ..\wolf\W_IndexBuffer.cpp ..\wolf\W_Material.cpp ..\wolf\W_MaterialManager.cpp ..\wolf\W_Program.cpp ..\wolf\W_ProgramManager.cpp ..\wolf\W_Texture.cpp ..\wolf\W_TextureManager.cpp ..\wolf\W_VertexBuffer.cpp ..\wolf\W_VertexDeclaration.cpp AABBCollider.cpp Camera.cpp CityModeller.cpp Collider.cpp CollisionDetector.cpp CubemapTexture.cpp DirectionalLightcpp.cpp FormatTranslator.cpp Frustum.cpp Node.cpp Ray.cpp SkyBox.cpp Sphere.cpp SphereCollider.cpp "week5\City Model.cpp" week5\main.cpp
+         main.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(74) : see previous definition of 'APIENTRY'
+     1>c:\program files (x86)\windows kits\8.1\include\um\wingdi.h(32): warning C4005: 'WINGDIAPI' : macro redefinition
+                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(91) : see previous definition of 'WINGDIAPI'
+         City Model.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\city model.cpp(84): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\week5\city model.cpp(117): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         SphereCollider.cpp
+         Sphere.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+         SkyBox.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+         Ray.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         Node.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(80): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(150): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(167): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(168): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(169): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(170): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(171): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(172): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\node.cpp(175): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         Frustum.cpp
+         FormatTranslator.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+         DirectionalLightcpp.cpp
+         CubemapTexture.cpp
+         CollisionDetector.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisiondetector.cpp(88): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+         Collider.cpp
          CityModeller.cpp
      1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
      1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(47): warning C4305: 'argument' : truncation from 'double' to 'float'
@@ -77,7 +114,66 @@
      1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(656): warning C4305: '+=' : truncation from 'double' to 'float'
      1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(665): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\citymodeller.cpp(666): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+         Camera.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(74) : see previous definition of 'APIENTRY'
+     1>c:\program files (x86)\windows kits\8.1\include\um\wingdi.h(32): warning C4005: 'WINGDIAPI' : macro redefinition
+                 c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\glfw\include\gl\glfw.h(91) : see previous definition of 'WINGDIAPI'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\ray.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(29): warning C4800: 'uint32' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(109): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(124): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(134): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(135): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(143): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(144): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(154): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(155): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(166): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(171): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(172): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(189): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(193): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(194): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(208): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(212): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(213): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\collisionhelper.h(284): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(119): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(120): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(142): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(146): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(184): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(194): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(265): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\camera.cpp(272): warning C4018: '<' : signed/unsigned mismatch
+         AABBCollider.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\aabbcollider.cpp(43): warning C4172: returning address of local variable or temporary
+         W_VertexDeclaration.cpp
+         W_VertexBuffer.cpp
+         W_TextureManager.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+         W_Texture.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+         Generating Code...
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\wolf\w_texture.cpp(245): warning C4715: 'wolf::Texture::getCategoryByName' : not all control paths return a value
+         Compiling...
+         W_ProgramManager.cpp
+         W_Program.cpp
+         W_MaterialManager.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+         W_Material.cpp
+     1>c:\users\zhuol_000\desktop\graphics-as2\assignment2_zhuokun-li\assignment2\struct.h(63): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+         W_IndexBuffer.cpp
+         W_Common.cpp
+         W_BufferManager.cpp
+         W_Buffer.cpp
+         tinyxmlparser.cpp
+         tinyxmlerror.cpp
+         tinyxml.cpp
+         tinystr.cpp
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glfw\lib-msvc100" /LIBPATH:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\..\glew\lib" GLFW.lib glew32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.lib" /MACHINE:X86 Debug\tinystr.obj
          Debug\tinyxml.obj
@@ -111,9 +207,10 @@
          Debug\SphereCollider.obj
          "Debug\City Model.obj"
          Debug\main.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          week5.vcxproj -> C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\Debug\week5.exe
      1>Done Building Project "C:\Users\zhuol_000\Desktop\Graphics-AS2\assignment2_Zhuokun-Li\assignment2\week5.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.50
+Time Elapsed 00:00:37.21
